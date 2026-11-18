@@ -55,12 +55,12 @@ const WorkCard: React.FC<WorkCardProps> = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+      initial={{ opacity: 0, y: 35, filter: 'blur(6px)' }}
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{
-        duration: 0.8,
-        delay: Math.min((index % 3) * 0.1, 0.25),
+        duration: 0.85,
+        delay: Math.min((index % 3) * 0.18, 0.36),
         ease: 'easeOut',
       }}
       className={`w-full ${isLarge ? 'h-full flex flex-col' : ''}`}
@@ -85,17 +85,19 @@ const WorkCard: React.FC<WorkCardProps> = ({
           }`}
         >
           <div className="media-preview-container w-full h-full relative">
-            <video
-              ref={videoRef}
-              className="hover-video absolute inset-0 w-full h-full object-cover"
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              poster={project.poster}
-            >
-              <source src={project.videoSrc} type="video/mp4" />
-            </video>
+            {project.videoSrc && (
+              <video
+                ref={videoRef}
+                className="hover-video absolute inset-0 w-full h-full object-cover"
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                poster={project.poster}
+              >
+                <source src={project.videoSrc} type="video/mp4" />
+              </video>
+            )}
             <div
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('${project.poster}')` }}
@@ -122,9 +124,11 @@ const WorkCard: React.FC<WorkCardProps> = ({
                 {project.subtitle}
               </p>
             </div>
-            <span className="text-[9px] sm:text-[10px] tracking-wider text-silver-400 font-mono uppercase bg-black/60 px-2 py-0.5 rounded border border-white/10">
-              {project.duration}
-            </span>
+            {project.duration && (
+              <span className="text-[9px] sm:text-[10px] tracking-wider text-silver-400 font-mono uppercase bg-black/60 px-2 py-0.5 rounded border border-white/10">
+                {project.duration}
+              </span>
+            )}
           </div>
         </div>
       </Link>

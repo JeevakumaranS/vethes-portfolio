@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 interface NavigationOverlayProps {
   isOpen: boolean;
@@ -12,6 +13,26 @@ export const NavigationOverlay: React.FC<NavigationOverlayProps> = ({
   isOpen,
   onClose,
 }) => {
+  const handleSelectedWorksClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    const target = document.getElementById("selected-works");
+    if (!target) return;
+
+    event.preventDefault();
+    onClose();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleAboutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = document.getElementById("about");
+    if (!target) return;
+
+    event.preventDefault();
+    onClose();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div
       id="nav-overlay"
@@ -22,45 +43,53 @@ export const NavigationOverlay: React.FC<NavigationOverlayProps> = ({
       }`}
       aria-hidden={!isOpen}
     >
-      <div className="flex flex-col gap-6 mt-6 max-w-xl mx-auto w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
+        animate={
+          isOpen
+            ? { opacity: 1, y: 0, filter: "blur(0px)" }
+            : { opacity: 0, y: 35, filter: "blur(6px)" }
+        }
+        transition={{ duration: 0.85, ease: "easeOut" }}
+        className="flex flex-col gap-6 mt-6 max-w-xl mx-auto w-full"
+      >
         <span className="text-[10px] tracking-[0.3em] uppercase text-silver-500 font-medium">
           INDEX
         </span>
         <nav className="flex flex-col gap-5">
           <Link
-            href="/cinematography"
-            onClick={onClose}
+            href="/#selected-works"
+            onClick={handleSelectedWorksClick}
             className="text-2xl font-light tracking-[0.16em] uppercase text-white hover:text-silver-400 transition-colors flex items-center justify-between group"
           >
-            <span>CINEMATOGRAPHY</span>
+            <span>SELECTED WORKS</span>
             <span className="text-xs text-silver-600 group-hover:text-white transition-colors">
               01
             </span>
           </Link>
           <Link
-            href="/color"
-            onClick={onClose}
-            className="text-2xl font-light tracking-[0.16em] uppercase text-silver-300 hover:text-white transition-colors flex items-center justify-between group"
-          >
-            <span>COLOR</span>
-            <span className="text-xs text-silver-600 group-hover:text-white transition-colors">
-              02
-            </span>
-          </Link>
-          <Link
-            href="/about"
-            onClick={onClose}
+            href="/#about"
+            onClick={handleAboutClick}
             className="text-2xl font-light tracking-[0.16em] uppercase text-silver-300 hover:text-white transition-colors flex items-center justify-between group"
           >
             <span>ABOUT</span>
             <span className="text-xs text-silver-600 group-hover:text-white transition-colors">
-              03
+              02
             </span>
           </Link>
         </nav>
-      </div>
+      </motion.div>
 
-      <div className="border-t border-white/10 pt-5 flex items-center justify-between text-silver-400 text-xs max-w-xl mx-auto w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 25, filter: "blur(6px)" }}
+        animate={
+          isOpen
+            ? { opacity: 1, y: 0, filter: "blur(0px)" }
+            : { opacity: 0, y: 25, filter: "blur(6px)" }
+        }
+        transition={{ duration: 0.85, delay: 0.18, ease: "easeOut" }}
+        className="border-t border-white/10 pt-5 flex items-center justify-between text-silver-400 text-xs max-w-xl mx-auto w-full"
+      >
         <div className="flex gap-4 tracking-widest uppercase text-[10px]">
           <a
             href="https://vimeo.com"
@@ -87,10 +116,10 @@ export const NavigationOverlay: React.FC<NavigationOverlayProps> = ({
             INSTAGRAM
           </a>
         </div>
-        <span className="text-[9px] tracking-[0.2em] text-silver-500 uppercase">
-          PARIS / LA
+        <span className="text-[10px] tracking-widest text-silver-600 uppercase font-mono">
+          DIRECTOR &amp; DP
         </span>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -25,20 +25,27 @@ export async function generateMetadata({
 
   return {
     title: `${project.title} — ${project.subtitle} | VETHESNAN`,
-    description: `Watch ${project.title} (${project.year || '2024'}), ${project.subtitle}. Directed / Cinematography by Vethesnan.`,
+    description: `Watch ${project.title}${project.year ? ` (${project.year})` : ''}, ${project.subtitle}. Directed / Cinematography by Vethesnan.`,
   };
 }
 
-export default async function Page({
+async function ProjectPageContent({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  return <ProjectDetailClient id={id} />;
+}
 
+export default function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-black" />}>
-      <ProjectDetailClient id={id} />
+      <ProjectPageContent params={params} />
     </Suspense>
   );
 }

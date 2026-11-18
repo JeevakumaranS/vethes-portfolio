@@ -90,12 +90,12 @@ export const VideoCard: React.FC<VideoCardProps> = ({
   return (
     <motion.article
       data-category={project.category}
-      initial={{ opacity: 0, y: 40, filter: "blur(4px)" }}
+      initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{
-        duration: 0.8,
-        delay: Math.min((index % 4) * 0.1, 0.3),
+        duration: 0.85,
+        delay: Math.min((index % 4) * 0.15, 0.45),
         ease: "easeOut",
       }}
       className="project-card video-card flex flex-col group cursor-pointer transition-all duration-300 w-full"
@@ -113,17 +113,19 @@ export const VideoCard: React.FC<VideoCardProps> = ({
         {/* Media Frame (No Zoom on hover) */}
         <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-charcoal-900 border-0 outline-none">
           <div className="media-preview-container w-full h-full relative">
-            <video
-              ref={videoRef}
-              className="hover-video absolute inset-0 w-full h-full object-cover"
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              poster={project.poster}
-            >
-              <source src={project.videoSrc} type="video/mp4" />
-            </video>
+            {project.videoSrc && (
+              <video
+                ref={videoRef}
+                className="hover-video absolute inset-0 w-full h-full object-cover"
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                poster={project.poster}
+              >
+                <source src={project.videoSrc} type="video/mp4" />
+              </video>
+            )}
             <div
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('${project.poster}')` }}
@@ -148,13 +150,15 @@ export const VideoCard: React.FC<VideoCardProps> = ({
             <h3 className="text-xs sm:text-sm font-semibold tracking-wide uppercase text-silver-100 group-hover:text-white transition-colors duration-300">
               <RollingText text={project.title} className="text-white" />
             </h3>
-            <span className="text-[10px] sm:text-[11px] tracking-wider text-silver-500 font-mono uppercase">
-              <RollingText
-                text={project.duration}
-                className="text-silver-400"
-                delayClass="delay-100"
-              />
-            </span>
+            {project.duration && (
+              <span className="text-[10px] sm:text-[11px] tracking-wider text-silver-500 font-mono uppercase">
+                <RollingText
+                  text={project.duration}
+                  className="text-silver-400"
+                  delayClass="delay-100"
+                />
+              </span>
+            )}
           </div>
 
           {/* Subtitle and Year Row (Staggered rolling transition) */}

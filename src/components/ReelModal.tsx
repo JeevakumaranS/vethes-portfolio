@@ -72,20 +72,33 @@ export const ReelModal: React.FC<ReelModalProps> = ({ isOpen, reel, onClose }) =
           </p>
         </header>
 
-        <div className="relative aspect-video w-full bg-black">
-          <video
-            key={reel.videoSrc}
-            className="h-full w-full object-contain"
-            autoPlay
-            muted
-            controls
-            playsInline
-            poster={reel.poster}
-            aria-label={reel.title}
-          >
-            <source src={reel.videoSrc} type="video/mp4" />
-          </video>
-        </div>
+        {reel.embedUrl ? (
+          <div className="relative mx-auto aspect-[9/16] w-full max-w-[500px] bg-black">
+            <iframe
+              src={reel.embedUrl}
+              title={reel.title}
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="h-full w-full border-0"
+            />
+          </div>
+        ) : (
+          <div className="relative aspect-video w-full bg-black">
+            <video
+              key={reel.videoSrc}
+              className="h-full w-full object-contain"
+              autoPlay
+              muted
+              controls
+              playsInline
+              poster={reel.poster}
+              aria-label={reel.title}
+            >
+              <source src={reel.videoSrc} type="video/mp4" />
+            </video>
+          </div>
+        )}
 
         <div
           className="mt-12 grid w-full grid-cols-2 gap-0 sm:mt-16"

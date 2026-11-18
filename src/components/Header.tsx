@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
 import { SignatureLogo } from "@/components/SignatureLogo";
 
 interface HeaderProps {
@@ -10,9 +11,34 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
+  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+
+  const handleSelectedWorksClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    const target = document.getElementById("selected-works");
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleAboutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = document.getElementById("about");
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <header className="fixed top-0 w-full z-50 pt-safe bg-black/80 backdrop-blur-md transition-all">
-      <div className="h-20 px-6 sm:px-10 lg:px-16 flex items-center justify-between w-full max-w-7xl mx-auto text-white">
+      <motion.div
+        initial={{ opacity: 0, y: -20, filter: "blur(6px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.85, ease: "easeOut" }}
+        className="h-20 px-6 sm:px-10 lg:px-16 flex items-center justify-between w-full max-w-7xl mx-auto text-white"
+      >
         {/* Top Left: Signature Brand Mark (Pure White) */}
         <Link
           href="/"
@@ -23,22 +49,31 @@ export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
         </Link>
 
         {/* Top Right: Desktop Navigation Links (Pure White) */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-10 text-sm font-normal tracking-wide text-white">
+        <nav
+          className="hidden md:flex items-center gap-8 lg:gap-10 text-sm font-normal tracking-wide text-white"
+          onMouseLeave={() => setHoveredCategory(null)}
+        >
           <Link
-            href="/cinematography"
-            className="text-white hover:text-white/75 transition-colors"
+            href="/#selected-works"
+            onClick={handleSelectedWorksClick}
+            onMouseEnter={() => setHoveredCategory("selected-works")}
+            className={`text-white transition-opacity duration-200 ease-in-out ${
+              hoveredCategory && hoveredCategory !== "selected-works"
+                ? "opacity-35"
+                : "opacity-100"
+            }`}
           >
-            Cinematography
+            Selected Works
           </Link>
           <Link
-            href="/color"
-            className="text-white hover:text-white/75 transition-colors"
-          >
-            Color
-          </Link>
-          <Link
-            href="/about"
-            className="text-white hover:text-white/75 transition-colors"
+            href="/#about"
+            onClick={handleAboutClick}
+            onMouseEnter={() => setHoveredCategory("about")}
+            className={`text-white transition-opacity duration-200 ease-in-out ${
+              hoveredCategory && hoveredCategory !== "about"
+                ? "opacity-35"
+                : "opacity-100"
+            }`}
           >
             About
           </Link>
@@ -71,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
             }`}
           />
         </button>
-      </div>
+      </motion.div>
     </header>
   );
 };

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion, type Variants } from 'motion/react';
-import { ArrowDown } from 'lucide-react';
+import React from "react";
+import { motion, type Variants } from "motion/react";
+import { ArrowDown } from "lucide-react";
 
 interface HeroSectionProps {
   onExploreClick?: () => void;
@@ -20,14 +20,28 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 35, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 35, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
+    filter: "blur(0px)",
     transition: {
       duration: 0.85,
-      ease: 'easeOut',
+      ease: "easeOut",
+    },
+  },
+};
+
+const scrollIndicatorVariants: Variants = {
+  hidden: { opacity: 0, y: 35, filter: "blur(6px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.85,
+      delay: 0.85,
+      ease: "easeOut",
     },
   },
 };
@@ -37,9 +51,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
     if (onExploreClick) {
       onExploreClick();
     } else {
-      const target = document.querySelector('#selected-works');
+      const target = document.querySelector("#selected-works");
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -59,9 +73,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
         {/* Main Title */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.25rem] font-bold tracking-tight text-white uppercase leading-[1.05]"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.25rem] font-bold tracking-tight text-white leading-[1.05]"
         >
-          DIRECTOR &amp; DP
+          Directed by &amp; EDITOR
         </motion.h1>
 
         {/* Location line in serif italic with separator */}
@@ -85,11 +99,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
         </motion.p>
       </motion.div>
 
-      {/* Subtle Scroll Down Indicator */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.85, duration: 0.7, ease: 'easeOut' }}
+        initial="hidden"
+        animate="visible"
+        variants={scrollIndicatorVariants}
         className="pt-8 flex flex-col items-center"
       >
         <button

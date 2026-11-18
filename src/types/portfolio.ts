@@ -4,20 +4,34 @@ export type ProjectCategory =
   | 'commercial'
   | 'music-video';
 
-export interface Project {
+export type PortfolioPageCategory = 'cinematography' | 'color';
+
+interface ProjectDetails {
   id: string;
   title: string;
   subtitle: string;
   category: 'narrative' | 'commercial' | 'music-video';
-  duration: string;
+  duration?: string;
   year?: string;
   role?: string;
   camera?: string;
   poster: string;
-  videoSrc: string;
+  portfolioCategory?: PortfolioPageCategory;
   stills?: string[];
+  descriptionHeading?: string;
   description?: string;
+  brand?: string;
+  project?: string;
+  client?: string;
+  production?: string;
+  videoOrientation?: 'portrait' | 'landscape';
 }
+
+export type Project = ProjectDetails &
+  (
+    | { videoSrc: string; embedUrl?: never }
+    | { videoSrc?: never; embedUrl: string }
+  );
 
 export interface FeaturedReelItem {
   tag: string;
@@ -27,10 +41,15 @@ export interface FeaturedReelItem {
   videoSrc: string;
 }
 
-export interface ModalReelItem {
+interface ModalReelDetails {
   title: string;
   subtitle?: string;
-  duration: string;
+  duration?: string;
   poster: string;
-  videoSrc: string;
 }
+
+export type ModalReelItem = ModalReelDetails &
+  (
+    | { videoSrc: string; embedUrl?: never }
+    | { videoSrc?: never; embedUrl: string }
+  );
