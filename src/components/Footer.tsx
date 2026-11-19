@@ -3,6 +3,16 @@
 import React from 'react';
 
 export const Footer: React.FC = () => {
+  const [currentYear, setCurrentYear] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setCurrentYear(new Date().getFullYear());
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <footer className="w-full px-5 py-8 flex flex-col items-center justify-center text-center border-t border-white/[0.05] bg-black">
       <div className="flex items-center justify-center gap-4 mb-2">
@@ -33,8 +43,8 @@ export const Footer: React.FC = () => {
           Instagram
         </a>
       </div>
-      <p className="text-[9px] text-silver-500 tracking-[0.25em] uppercase">
-        &copy; 2026 VETHESNAN
+      <p className="text-[9px] text-white tracking-[0.25em] uppercase">
+        &copy; {currentYear} VETHESNAN. All Rights Reserved.
       </p>
     </footer>
   );

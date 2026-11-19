@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import { SignatureLogo } from "@/components/SignatureLogo";
 
@@ -12,23 +13,28 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const router = useRouter();
 
   const handleSelectedWorksClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
   ) => {
     const target = document.getElementById("selected-works");
-    if (!target) return;
-
     event.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      router.push("/#selected-works");
+    }
   };
 
   const handleAboutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     const target = document.getElementById("about");
-    if (!target) return;
-
     event.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      router.push("/#about");
+    }
   };
 
   return (

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { NavigationOverlay } from '@/components/NavigationOverlay';
@@ -10,6 +10,24 @@ import { SelectedWorksSection } from '@/components/SelectedWorksSection';
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      const sectionId = window.location.hash.slice(1);
+      if (!sectionId) return;
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(sectionId)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    };
+
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
+    return () => window.removeEventListener('hashchange', scrollToHash);
+  }, []);
 
   const handleScrollToSelectedWorks = () => {
     const target = document.querySelector('#selected-works');
@@ -45,7 +63,7 @@ export default function Home() {
 
       {/* STICKY CURTAIN REVEAL FOOTER WITH KINETIC TYPOGRAPHY */}
       <div className="sticky bottom-0 z-0 bg-black min-h-[50vh] flex flex-col justify-end">
-        <ContactSection />
+        <ContactSection showHeading={false} compact />
       </div>
     </div>
   );

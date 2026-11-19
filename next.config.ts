@@ -4,6 +4,18 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    qualities: [75, 90],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "vumbnail.com",
+        port: "",
+        pathname: "/**",
+        search: "",
+      },
+    ],
+  },
   turbopack: {
     rules: {
       "*.css": {

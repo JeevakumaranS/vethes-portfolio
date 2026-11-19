@@ -5,6 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { SignatureLogo } from "@/components/SignatureLogo";
+import workezThumbnail from "@/assets/thumbnails/workez.jpg.jpeg";
+import rifleThumbnail from "@/assets/thumbnails/Rifle pic.jpg.jpeg";
+import pothysThumbnail from "@/assets/thumbnails/Pothys pic.jpg.jpeg";
+import sierraEvThumbnail from "@/assets/thumbnails/sierra ev1_00109731.jpg.jpeg";
+import testimonialThumbnail from "@/assets/thumbnails/testimonial00086400.jpg.jpeg";
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 35, filter: "blur(6px)" },
@@ -227,130 +232,128 @@ export const SelectedWorksSection: React.FC = () => {
           viewport={{ once: true, amount: 0.05 }}
           className="flex flex-col gap-4 sm:gap-5 lg:gap-6"
         >
-          {/* BLOCK 1: Left 2 Stacked Cards (cols 1-5), Right 1 Large Hero Card (cols 6-12) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 lg:gap-6 items-stretch">
-            {/* Left Column: 2 Stacked Cards */}
-            <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-5 lg:gap-6">
-              {/* Card 1: Sierra EV */}
+          {/* FIRST HALF: Asymmetric Layout matching user photo */}
+          {/* Left: 1 (2:3 Sierra EV) | Right: 2 (3:2 Papa Johns) + 3 (3:2 WorkEZ) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 items-start">
+            {/* 1. Sierra EV (2:3) */}
+            <motion.div variants={itemVariants} className="w-full">
+              <SelectedWorkCard
+                title="A LEGEND RETURNS"
+                subtitle="Insta Reel"
+                aspectRatio="2 / 3"
+                href="/project/sierra-ev"
+              >
+                <Image
+                  src={sierraEvThumbnail}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
+                  className="object-cover"
+                />
+              </SelectedWorkCard>
+            </motion.div>
+
+            {/* Right Column: 2. Papa Johns (3:2) & 3. WorkEZ (3:2) */}
+            <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 w-full">
+              {/* 2. Papa Johns (3:2) */}
               <motion.div variants={itemVariants} className="w-full">
                 <SelectedWorkCard
-                  title="A LEGEND RETURNS"
-                  subtitle="Insta Reel"
-                  aspectRatio="16 / 10"
-                  href="/project/sierra-ev"
+                  title="CRAFTED TO PERFECTION."
+                  subtitle="Papa Johns • Spec Commercial"
+                  aspectRatio="3 / 2"
+                  href="/project/papa-johns"
                 >
                   <Image
-                    src="https://vumbnail.com/1247723283.jpg"
+                    src="https://vumbnail.com/1247729292.jpg"
                     alt=""
                     fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    unoptimized
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={90}
                     className="object-cover"
                   />
                 </SelectedWorkCard>
               </motion.div>
 
-              {/* Card 2: Sierra Testimonial */}
+              {/* 3. WorkEZ (3:2) */}
               <motion.div variants={itemVariants} className="w-full">
                 <SelectedWorkCard
-                  title="SIERRA TESTIMONIAL"
-                  subtitle="Customer Testimonial"
-                  aspectRatio="16 / 10"
-                  href="/project/sierra-testimonial"
+                  title="A SPACE OF POSSIBILITIES"
+                  subtitle="WorkEZ Walkthrough"
+                  aspectRatio="3 / 2"
+                  href="/project/workez-walkthrough"
                 >
                   <Image
-                    src="https://vumbnail.com/1247726394.jpg"
+                    src={workezThumbnail}
                     alt=""
                     fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    unoptimized
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={90}
                     className="object-cover"
                   />
                 </SelectedWorkCard>
               </motion.div>
             </div>
-
-            {/* Right Column: 1 Large Hero Card spanning full height */}
-            <motion.div variants={itemVariants} className="lg:col-span-7 flex w-full">
-              <SelectedWorkCard
-                title="A SPACE OF POSSIBILITIES"
-                subtitle="WorkEZ Walkthrough"
-                href="/project/workez-walkthrough"
-                className="h-full min-h-[340px] sm:min-h-[440px] lg:min-h-0"
-              >
-                <Image
-                  src="https://vumbnail.com/1247960038.jpg"
-                  alt=""
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  unoptimized
-                  className="object-cover"
-                />
-              </SelectedWorkCard>
-            </motion.div>
           </div>
 
-          {/* BLOCK 2: Left 1 Large Hero Card (cols 1-7), Right 2 Stacked Cards (cols 8-12) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 lg:gap-6 items-stretch">
-            {/* Left Column: 1 Large Hero Card spanning full height */}
-            <motion.div variants={itemVariants} className="lg:col-span-7 flex w-full order-2 lg:order-1">
+          {/* SECOND HALF: Remaining Three Projects (Pending User Layout Decision) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+            {/* 4. Sierra Testimonial */}
+            <motion.div variants={itemVariants} className="w-full">
               <SelectedWorkCard
-                title="CRAFTED TO PERFECTION."
-                subtitle="Papa Johns • Spec Commercial"
-                href="/project/papa-johns"
-                className="h-full min-h-[340px] sm:min-h-[440px] lg:min-h-0"
+                title="SIERRA TESTIMONIAL"
+                subtitle="Customer Testimonial"
+                aspectRatio="16 / 10"
+                href="/project/sierra-testimonial"
               >
                 <Image
-                  src="https://vumbnail.com/1247729292.jpg"
+                  src={testimonialThumbnail}
                   alt=""
                   fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  unoptimized
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  quality={90}
                   className="object-cover"
                 />
               </SelectedWorkCard>
             </motion.div>
 
-            {/* Right Column: 2 Stacked Cards */}
-            <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-5 lg:gap-6 order-1 lg:order-2">
-              {/* Card 4: SLAM Fitness */}
-              <motion.div variants={itemVariants} className="w-full">
-                <SelectedWorkCard
-                  title="Rifle hype"
-                  subtitle="SLAM Fitness Studio • Launch Teaser"
-                  aspectRatio="16 / 10"
-                  href="/project/slam-fitness"
-                >
-                  <Image
-                    src="https://vumbnail.com/1247979901.jpg"
-                    alt=""
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    unoptimized
-                    className="object-cover"
-                  />
-                </SelectedWorkCard>
-              </motion.div>
+            {/* 5. SLAM Fitness */}
+            <motion.div variants={itemVariants} className="w-full">
+              <SelectedWorkCard
+                title="Rifle hype"
+                subtitle="SLAM Fitness Studio • Launch Teaser"
+                aspectRatio="16 / 10"
+                href="/project/slam-fitness"
+              >
+                <Image
+                  src={rifleThumbnail}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  quality={90}
+                  className="object-cover"
+                />
+              </SelectedWorkCard>
+            </motion.div>
 
-              {/* Card 5: Pothys Swarna Mahal */}
-              <motion.div variants={itemVariants} className="w-full">
-                <SelectedWorkCard
-                  title="A REASON TO SHINE."
-                  subtitle="Pothys Swarna Mahal • Promotional Film"
-                  aspectRatio="16 / 10"
-                  href="/project/pothys-swarnamahal"
-                >
-                  <Image
-                    src="https://vumbnail.com/1247735250.jpg"
-                    alt=""
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    unoptimized
-                    className="object-cover"
-                  />
-                </SelectedWorkCard>
-              </motion.div>
-            </div>
+            {/* 6. Pothys Swarna Mahal */}
+            <motion.div variants={itemVariants} className="w-full">
+              <SelectedWorkCard
+                title="A REASON TO SHINE."
+                subtitle="Pothys Swarna Mahal • Promotional Film"
+                aspectRatio="16 / 10"
+                href="/project/pothys-swarnamahal"
+              >
+                <Image
+                  src={pothysThumbnail}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  quality={90}
+                  className="object-cover object-[50%_36%]"
+                />
+              </SelectedWorkCard>
+            </motion.div>
           </div>
         </motion.div>
       </div>

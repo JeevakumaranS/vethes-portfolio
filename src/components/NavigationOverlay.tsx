@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 
 interface NavigationOverlayProps {
@@ -13,24 +14,30 @@ export const NavigationOverlay: React.FC<NavigationOverlayProps> = ({
   isOpen,
   onClose,
 }) => {
+  const router = useRouter();
+
   const handleSelectedWorksClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
   ) => {
     const target = document.getElementById("selected-works");
-    if (!target) return;
-
     event.preventDefault();
     onClose();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      router.push("/#selected-works");
+    }
   };
 
   const handleAboutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     const target = document.getElementById("about");
-    if (!target) return;
-
     event.preventDefault();
     onClose();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      router.push("/#about");
+    }
   };
 
   return (

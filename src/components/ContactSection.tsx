@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion, type Variants } from 'motion/react';
 
 const containerVariants: Variants = {
@@ -29,15 +30,29 @@ const itemVariants: Variants = {
 
 interface ContactSectionProps {
   showHeading?: boolean;
+  compact?: boolean;
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
   showHeading = true,
+  compact = false,
 }) => {
+  const [currentYear, setCurrentYear] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setCurrentYear(new Date().getFullYear());
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
   return (
     <footer
       id="about-inquiry"
-      className="w-full bg-black text-white px-6 sm:px-10 lg:px-16 xl:px-20 pt-28 sm:pt-36 pb-16 sm:pb-24 flex flex-col justify-between select-none"
+      className={`w-full bg-black text-white px-6 sm:px-10 lg:px-16 xl:px-20 pt-28 sm:pt-36 ${
+        compact ? 'pb-6 sm:pb-8' : 'pb-16 sm:pb-24'
+      } flex flex-col justify-between select-none`}
     >
       <motion.div
         variants={containerVariants}
@@ -60,13 +75,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           )}
 
           {/* Line 2: ~ Let's talk. */}
-          <div className="w-full text-right py-1 mt-1 sm:mt-2">
+          <div className="w-full text-right py-1 mt-0">
             <motion.div
               variants={itemVariants}
               className="inline-block"
             >
-              <a
-                href="mailto:vethesapoxi@gmail.com"
+              <Link
+                href="/#about"
                 className="group font-serif italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white hover:text-silver-300 transition-colors inline-flex items-baseline gap-2 cursor-pointer"
               >
                 <span className="not-italic font-light text-silver-400 group-hover:text-white transition-colors">
@@ -75,7 +90,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 <span className="underline decoration-1 underline-offset-8 decoration-white/30 group-hover:decoration-white transition-all">
                   Let&apos;s talk.
                 </span>
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -93,8 +108,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         }}
         className="max-w-7xl mx-auto w-full mt-24 pt-6 border-t border-white/10 flex items-center justify-center text-center"
       >
-        <p className="text-xs sm:text-sm text-silver-500 font-light tracking-wider">
-          &copy; 2026 VETHESNAN. All Rights Reserved.
+        <p className="text-sm sm:text-base text-white font-medium tracking-wider">
+          &copy; {currentYear} VETHESNAN. All Rights Reserved.
         </p>
       </motion.div>
     </footer>

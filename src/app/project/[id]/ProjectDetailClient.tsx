@@ -327,30 +327,35 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
           </motion.section>
         )}
 
-        {/* Next Project Footer Link */}
+        {/* Next Project */}
         {nextProject && (
-          <motion.div
-            initial={{ opacity: 0, y: 35, filter: 'blur(6px)' }}
-            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.85, ease: 'easeOut' }}
-            className="mt-24 sm:mt-32 text-center px-4 max-w-md mx-auto"
-          >
-            <span className="text-[10px] tracking-widest text-silver-500 uppercase block mb-2 font-mono">
-              Next Project
-            </span>
+          <section className="mx-auto mt-24 max-w-5xl px-4 sm:mt-32 sm:px-6 lg:px-8">
             <Link
               href={`/project/${nextProject.id}`}
-              className="group inline-flex flex-col items-center gap-1"
+              className="group relative flex min-h-64 items-end overflow-hidden border border-white/15 bg-charcoal-900 p-6 sm:min-h-80 sm:p-10"
             >
-              <span className="text-xl sm:text-2xl font-bold uppercase tracking-wide text-white group-hover:text-red-500 transition-colors">
-                {nextProject.title}
-              </span>
-              <span className="text-xs text-silver-400 font-light">
-                {nextProject.subtitle}
-              </span>
+              <div
+                aria-hidden="true"
+                style={{ backgroundImage: `url("${nextProject.poster}")` }}
+                className="absolute inset-0 bg-cover bg-center opacity-55 transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/20" />
+              <div className="relative z-10">
+                <span className="mb-3 block text-xs font-mono tracking-[0.25em] text-red-400 uppercase">
+                  Next Project
+                </span>
+                <span className="block text-3xl font-bold tracking-wide text-white uppercase transition-colors group-hover:text-red-400 sm:text-5xl">
+                  {nextProject.title}
+                </span>
+                <span className="mt-2 block text-base text-silver-200 sm:text-lg">
+                  {nextProject.subtitle}
+                </span>
+                <span className="mt-6 inline-block border-b border-white/50 pb-1 text-xs tracking-[0.2em] text-white uppercase">
+                  View Project
+                </span>
+              </div>
             </Link>
-          </motion.div>
+          </section>
         )}
       </main>
 

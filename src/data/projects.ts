@@ -1,4 +1,7 @@
 import { Project, FeaturedReelItem, ModalReelItem } from "@/types/portfolio";
+import workezThumbnail from "@/assets/thumbnails/workez.jpg.jpeg";
+import rifleThumbnail from "@/assets/thumbnails/Rifle pic.jpg.jpeg";
+import pothysThumbnail from "@/assets/thumbnails/Pothys pic.jpg.jpeg";
 
 export const FEATURED_REEL: FeaturedReelItem = {
   tag: "DIRECTOR REEL",
@@ -32,8 +35,8 @@ export const CATEGORIES: {
 export const PROJECTS: Project[] = [
   {
     id: "sierra-ev",
-    title: "A LEGEND RETURNS",
-    subtitle: "Insta Reel",
+    title: "Sierra EV",
+    subtitle: "Launch Film",
     category: "commercial",
     portfolioCategory: "cinematography",
     description:
@@ -43,16 +46,16 @@ export const PROJECTS: Project[] = [
     role: "Cinematography & Editing",
     poster: "https://vumbnail.com/1247723283.jpg",
     embedUrl:
-      "https://player.vimeo.com/video/1247723283?autopause=0&player_id=0&app_id=58479",
-    stills: [
-      "https://vumbnail.com/1247723283.jpg",
-      "https://vumbnail.com/1247723283.jpg",
-    ],
+      "https://player.vimeo.com/video/1247723283?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
+    // stills: [
+    //   "https://vumbnail.com/1247723283.jpg",
+    //   "https://vumbnail.com/1247723283.jpg",
+    // ],
   },
   {
     id: "sierra-testimonial",
-    title: "A LEGACY REBORN.",
-    subtitle: "Customer Testimonial",
+    title: "Sierra Customer",
+    subtitle: "Testimonial Film",
     category: "commercial",
     portfolioCategory: "cinematography",
     poster: "https://vumbnail.com/1247726394.jpg",
@@ -64,10 +67,10 @@ export const PROJECTS: Project[] = [
     videoOrientation: "landscape",
     embedUrl:
       "https://player.vimeo.com/video/1247726394?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    stills: [
-      "https://vumbnail.com/1247726394.jpg",
-      "https://vumbnail.com/1247726394.jpg",
-    ],
+    // stills: [
+    //   "https://vumbnail.com/1247726394.jpg",
+    //   "https://vumbnail.com/1247726394.jpg",
+    // ],
   },
   {
     id: "workez-walkthrough",
@@ -81,13 +84,10 @@ export const PROJECTS: Project[] = [
     production: "Plan B Productions",
     role: "Cinematography & Editing",
     videoOrientation: "landscape",
-    poster: "https://vumbnail.com/1247960038.jpg",
+    poster: workezThumbnail.src,
     embedUrl:
       "https://player.vimeo.com/video/1247960038?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    stills: [
-      "https://vumbnail.com/1247960038.jpg",
-      "https://vumbnail.com/1247960038.jpg",
-    ],
+    stills: [workezThumbnail.src, workezThumbnail.src],
   },
   {
     id: "papa-johns",
@@ -103,7 +103,7 @@ export const PROJECTS: Project[] = [
     videoOrientation: "landscape",
     embedUrl:
       "https://player.vimeo.com/video/1247729292?autopause=0&player_id=0&app_id=58479",
-    stills: ["https://vumbnail.com/1247729292.jpg"],
+    // stills: ["https://vumbnail.com/1247729292.jpg"],
   },
   {
     id: "slam-fitness",
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
     subtitle: "SLAM Fitness Studio • Launch Teaser",
     category: "commercial",
     portfolioCategory: "cinematography",
-    poster: "https://vumbnail.com/1247979901.jpg",
+    poster: rifleThumbnail.src,
     descriptionHeading: "LOCK ON. LEVEL UP.",
     description:
       "An action-inspired launch teaser created to build anticipation for the opening of SLAM Fitness Studio in Madurai. Using suspense, sharp visuals and a striking reveal, the film turns the anticipation of a new fitness destination into a cinematic experience.",
@@ -121,10 +121,7 @@ export const PROJECTS: Project[] = [
     videoOrientation: "portrait",
     embedUrl:
       "https://player.vimeo.com/video/1247979901?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    stills: [
-      "https://vumbnail.com/1247979901.jpg",
-      "https://vumbnail.com/1247979901.jpg",
-    ],
+    stills: [rifleThumbnail.src, rifleThumbnail.src],
   },
   {
     id: "pothys-swarnamahal",
@@ -138,12 +135,9 @@ export const PROJECTS: Project[] = [
     project: "Promotional Film",
     role: "Cinematography, Editing & Color Grading",
     videoOrientation: "portrait",
-    poster: "https://vumbnail.com/1247735250.jpg",
+    poster: pothysThumbnail.src,
     embedUrl:
       "https://player.vimeo.com/video/1247735250?autopause=0&player_id=0&app_id=58479",
-    stills: [
-      "https://vumbnail.com/1247735250.jpg",
-      "https://vumbnail.com/1247735250.jpg",
-    ],
-  }
+    stills: [pothysThumbnail.src, pothysThumbnail.src],
+  },
 ];

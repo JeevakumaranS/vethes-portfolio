@@ -62,18 +62,6 @@ export const AboutSection: React.FC = () => {
         viewport={{ once: true, amount: 0.12 }}
         className="mx-auto w-full max-w-[1440px]"
       >
-        {/* Minimalist Top Tag */}
-        <motion.div
-          variants={itemVariants}
-          className="mb-14 sm:mb-20 lg:mb-24 flex items-center gap-4"
-        >
-          <span className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.3em] text-red-500 uppercase">
-            <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-            About the Filmmaker
-          </span>
-          <span aria-hidden="true" className="h-px flex-1 bg-white/10" />
-        </motion.div>
-
         {/* 2-Column Grid */}
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-16 xl:gap-24">
           {/* Left Column: Portrait Photo with Double Frame */}
