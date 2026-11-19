@@ -3,26 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion, type Variants } from "motion/react";
-import { Mail, Phone } from "lucide-react";
-
-const InstagramIcon: React.FC<{ className?: string }> = ({
-  className = "h-4 w-4",
-}) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden="true"
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-  </svg>
-);
+import { Mail, Phone, Video } from "lucide-react";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -53,7 +34,7 @@ export const AboutSection: React.FC = () => {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 pt-8 pb-24 sm:pt-10 sm:pb-32 lg:pt-12 lg:pb-40 scroll-mt-20"
+      className="w-full px-8 sm:px-12 lg:px-20 xl:px-30 pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20 scroll-mt-20"
     >
       <motion.div
         variants={containerVariants}
@@ -84,23 +65,19 @@ export const AboutSection: React.FC = () => {
                 sizes="(max-width: 1024px) 100vw, (max-width: 1440px) 45vw, 520px"
                 className="object-cover object-center transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
               />
-
-              {/* Gradient Vignette & Caption */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent p-6 pt-24 sm:p-8 flex flex-col justify-end">
-                <p className="text-xl sm:text-2xl font-bold tracking-wider text-white uppercase">
-                  Vethesnan
-                </p>
-              </div>
             </div>
           </motion.div>
 
           {/* Right Column: Statement & Story */}
           <div className="flex flex-col justify-start pt-1 lg:pt-2">
-            <h2 id="about-title" className="sr-only">
-              About Vethesnan
+            <h2
+              id="about-title"
+              className="text-2xl font-bold leading-tight tracking-wide text-white sm:text-3xl lg:text-4xl"
+            >
+              I&apos;m Vethesnan
             </h2>
 
-            <div className="space-y-6 text-base font-light leading-relaxed text-silver-200 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9">
+            <div className="space-y-6 pt-4 text-base font-light leading-relaxed text-silver-200 sm:pt-6 sm:text-lg sm:leading-8 lg:pt-8 lg:text-xl lg:leading-9">
               <motion.p variants={itemVariants}>
                 A filmmaker driven by curiosity and a passion for visual
                 storytelling. Working across cinematography, editing and colour
@@ -114,7 +91,7 @@ export const AboutSection: React.FC = () => {
               </motion.p>
             </div>
 
-            {/* Contact Details (Email, Phone, Instagram) */}
+            {/* Contact Details (Email, Phone, Vimeo) */}
             <motion.div
               variants={itemVariants}
               className="mt-10 sm:mt-12 grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-[1.3fr_1fr_1fr] border-t border-white/10 pt-8"
@@ -151,21 +128,21 @@ export const AboutSection: React.FC = () => {
                 </p>
               </a>
 
-              {/* Instagram */}
+              {/* Vimeo */}
               <a
-                href="https://instagram.com/_vethes"
+                href="https://vimeo.com/vethesnan?fl=pp&fe=sh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative isolate overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:translate-x-[-100%] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.04)_40%,rgba(255,255,255,0.24)_50%,rgba(255,255,255,0.04)_60%,transparent_100%)] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-[''] hover:border-white/30 hover:bg-white/[0.05] hover:before:translate-x-[100%] focus-visible:before:translate-x-[100%]"
               >
                 <div className="flex items-center gap-2 text-[#A100FF]">
-                  <InstagramIcon className="h-4 w-4" />
+                  <Video className="h-4 w-4" />
                   <span className="text-[10px] font-mono tracking-widest uppercase">
-                    Instagram
+                    Vimeo
                   </span>
                 </div>
                 <p className="mt-2 text-xs sm:text-[13px] md:text-sm font-medium tracking-tight sm:tracking-normal text-white group-hover:text-[#A100FF] transition-colors whitespace-nowrap">
-                  _vethes
+                  vimeo.com/vethesnan
                 </p>
               </a>
             </motion.div>

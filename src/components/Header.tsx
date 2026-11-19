@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
-import { SignatureLogo } from "@/components/SignatureLogo";
 
 interface HeaderProps {
   navOpen: boolean;
@@ -27,7 +27,14 @@ export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
           className="text-white hover:opacity-80 transition-opacity flex items-center"
           aria-label="Vethesnan Home"
         >
-          <SignatureLogo className="h-9 sm:h-11 w-auto text-white" />
+          <Image
+            src="/vethesnan_logo.svg"
+            alt=""
+            width={212}
+            height={109}
+            unoptimized
+            className="h-14 sm:h-19 w-auto"
+          />
         </Link>
 
         {/* Top Right: Desktop Navigation Links (Pure White) */}

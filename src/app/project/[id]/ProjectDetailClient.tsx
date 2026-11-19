@@ -26,7 +26,11 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
   // Find next project for continuation
   const currentIndex = PROJECTS.findIndex((p) => p.id === id);
   const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
-  const hasVideoDescriptionLayout = Boolean(project.description && project.embedUrl);
+  const hasVideoDescriptionLayout = Boolean(
+    project.description &&
+      project.embedUrl &&
+      project.videoOrientation !== "landscape",
+  );
   const isPortraitEmbed = Boolean(
     project.embedUrl && project.videoOrientation !== "landscape",
   );
@@ -37,17 +41,13 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
           {project.descriptionHeading}
         </h2>
       )}
-      <p
-        className={`text-sm leading-7 text-silver-300 sm:text-base sm:leading-8 ${
-          hasVideoDescriptionLayout ? "text-justify" : ""
-        }`}
-      >
+      <p className="text-base leading-8 text-silver-300 text-justify sm:text-lg sm:leading-9">
         {project.description}
       </p>
       <dl className="mt-8 grid grid-cols-1 gap-y-5 border-t border-white/10 pt-6 text-sm sm:grid-cols-3 sm:gap-x-6 sm:text-center">
         {project.client && (
           <div className="min-w-0">
-            <dt className="text-[10px] tracking-[0.2em] text-[#A100FF] uppercase">
+            <dt className="text-[10px] font-bold tracking-[0.2em] text-[#A100FF] uppercase">
               Client
             </dt>
             <dd className="mt-2 font-bold text-silver-200">{project.client}</dd>
@@ -71,7 +71,7 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
         )}
         {project.production && (
           <div className="min-w-0">
-            <dt className="text-[10px] tracking-[0.2em] text-[#A100FF] uppercase">
+            <dt className="text-[10px] font-bold tracking-[0.2em] text-[#A100FF] uppercase">
               Production
             </dt>
             <dd className="mt-2 font-bold text-silver-200">
@@ -81,7 +81,7 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
         )}
         {project.role && (
           <div className="min-w-0">
-            <dt className="text-[10px] tracking-[0.2em] text-[#A100FF] uppercase">
+            <dt className="text-[10px] font-bold tracking-[0.2em] text-[#A100FF] uppercase">
               My Role
             </dt>
             <dd className="mt-2 font-bold text-silver-200">{project.role}</dd>
@@ -169,10 +169,10 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
                       )}
                       {project.role && (
                         <div>
-                          <dt className="text-[9px] tracking-[0.2em] text-silver-500 uppercase">
+                          <dt className="text-[9px] font-bold tracking-[0.2em] text-silver-500 uppercase">
                             Role
                           </dt>
-                          <dd className="mt-1 text-silver-200">
+                          <dd className="mt-1 font-bold text-silver-200">
                             {project.role}
                           </dd>
                         </div>
@@ -199,10 +199,10 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
                       )}
                       {project.client && (
                         <div>
-                          <dt className="text-[9px] tracking-[0.2em] text-silver-500 uppercase">
+                          <dt className="text-[9px] font-bold tracking-[0.2em] text-silver-500 uppercase">
                             Client
                           </dt>
-                          <dd className="mt-1 text-silver-200">
+                          <dd className="mt-1 font-bold text-silver-200">
                             {project.client}
                           </dd>
                         </div>
@@ -229,10 +229,10 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
                       )}
                       {project.production && (
                         <div>
-                          <dt className="text-[9px] tracking-[0.2em] text-silver-500 uppercase">
+                          <dt className="text-[9px] font-bold tracking-[0.2em] text-silver-500 uppercase">
                             Production
                           </dt>
-                          <dd className="mt-1 text-silver-200">
+                          <dd className="mt-1 font-bold text-silver-200">
                             {project.production}
                           </dd>
                         </div>

@@ -219,7 +219,7 @@ export const SelectedWorksSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.05 }}
-          className="flex flex-col gap-4 sm:gap-5 lg:gap-6"
+          className="mx-auto flex flex-col gap-4 sm:gap-5 lg:w-3/4 lg:gap-6"
         >
           {/* FIRST HALF: Asymmetric Layout matching user photo */}
           {/* Left: 1 (2:3 Sierra EV) | Right: 2 (3:2 Papa Johns) + 3 (3:2 WorkEZ) */}
@@ -334,13 +334,12 @@ export const SelectedWorksSection: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Row 2: 6 (21:9 A Legacy Reborn - Cinematic Full-Width Ultrawide) */}
+          {/* Row 2: 6 (A Legacy Reborn - 3:2 mobile, 21:9 desktop) */}
           <motion.div variants={itemVariants} className="w-full">
             <SelectedWorkCard
               title="A Legacy reborn"
               subtitle="Tata Sierra • Testimonial Film"
-              aspectRatio="21 / 9"
-              className="w-full aspect-[21/9]"
+              className="w-full aspect-[3/2] md:aspect-[21/9]"
               href="/project/sierra-testimonial"
             >
               <Image

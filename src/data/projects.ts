@@ -2,6 +2,7 @@ import { Project, FeaturedReelItem, ModalReelItem } from "@/types/portfolio";
 import workezThumbnail from "@/assets/thumbnails/workez.jpg.jpeg";
 import rifleThumbnail from "@/assets/thumbnails/Rifle pic.jpg.jpeg";
 import pothysThumbnail from "@/assets/thumbnails/Pothys pic.jpg.jpeg";
+import papaJohnsThumbnail from "@/assets/thumbnails/papa john pic00090153.jpg.jpeg";
 
 export const FEATURED_REEL: FeaturedReelItem = {
   tag: "DIRECTOR REEL",
@@ -94,7 +95,7 @@ export const PROJECTS: Project[] = [
     title: "CRAFTED TO PERFECTION",
     subtitle: "Papa Johns • Spec Commercial",
     category: "commercial",
-    poster: "https://vumbnail.com/1247729292.jpg",
+    poster: papaJohnsThumbnail.src,
     description:
       "An independent spec commercial for Papa Johns, created in Bengaluru. Exploring the craft behind pizza-making, the film follows the process from freshly prepared dough to the final golden bake, bringing attention to the ingredients, textures and details that make every step special.",
     brand: "Papa Johns",
