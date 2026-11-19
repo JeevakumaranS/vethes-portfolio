@@ -161,7 +161,7 @@ const SelectedWorkCard: React.FC<SelectedWorkCardProps> = ({
     <span className="pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden p-4 pt-12 text-left text-white">
       <span
         aria-hidden="true"
-        className="absolute inset-0 translate-y-full bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none [@media(hover:hover)]:group-hover:translate-y-0 group-focus-within:translate-y-0"
+        className="absolute inset-0 translate-y-full bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none [@media(hover:hover)]:group-hover:translate-y-0 group-focus-within:translate-y-0"
       />
       <span className="relative z-10">{captionContent}</span>
     </span>
