@@ -56,7 +56,7 @@ export default function AboutPage() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full bg-black text-white selection:bg-red-500 selection:text-white">
+    <div className="relative min-h-screen w-full bg-black text-white selection:bg-[#A100FF] selection:text-white">
       {/* Header */}
       <Header
         navOpen={navOpen}
@@ -78,8 +78,8 @@ export default function AboutPage() {
               variants={itemVariants}
               className="mb-8 flex items-center gap-4 sm:mb-12"
             >
-              <span className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.3em] text-red-500 uppercase">
-                <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+              <span className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.3em] text-[#A100FF] uppercase">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#A100FF]" />
                 About the Filmmaker
               </span>
               <span aria-hidden="true" className="h-px flex-1 bg-white/10" />
@@ -153,13 +153,13 @@ export default function AboutPage() {
                     href="mailto:vethesapoxi@gmail.com"
                     className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
                   >
-                    <div className="flex items-center gap-2 text-red-500">
+                    <div className="flex items-center gap-2 text-[#A100FF]">
                       <Mail className="h-4 w-4" />
                       <span className="text-[10px] font-mono tracking-widest uppercase">
                         Email
                       </span>
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-red-400 transition-colors break-all">
+                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors break-all">
                       vethesapoxi@gmail.com
                     </p>
                   </a>
@@ -169,13 +169,13 @@ export default function AboutPage() {
                     href="tel:7339566984"
                     className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
                   >
-                    <div className="flex items-center gap-2 text-red-500">
+                    <div className="flex items-center gap-2 text-[#A100FF]">
                       <Phone className="h-4 w-4" />
                       <span className="text-[10px] font-mono tracking-widest uppercase">
                         Phone
                       </span>
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-red-400 transition-colors">
+                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors">
                       7339566984
                     </p>
                   </a>
@@ -187,13 +187,13 @@ export default function AboutPage() {
                     rel="noopener noreferrer"
                     className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
                   >
-                    <div className="flex items-center gap-2 text-red-500">
+                    <div className="flex items-center gap-2 text-[#A100FF]">
                       <InstagramIcon className="h-4 w-4" />
                       <span className="text-[10px] font-mono tracking-widest uppercase">
                         Instagram
                       </span>
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-red-400 transition-colors">
+                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors">
                       _vethes
                     </p>
                   </a>

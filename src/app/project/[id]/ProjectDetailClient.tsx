@@ -28,7 +28,7 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
   const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
 
   return (
-    <div className="min-h-screen w-full bg-black text-white selection:bg-red-500 selection:text-white">
+    <div className="min-h-screen w-full bg-black text-white selection:bg-[#A100FF] selection:text-white">
       {/* Top Navigation Bar */}
       <Header
         navOpen={navOpen}
@@ -44,12 +44,12 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
           transition={{ duration: 0.85, ease: 'easeOut' }}
           className="pt-4 sm:pt-6 pb-4 sm:pb-6 text-center px-4 max-w-4xl mx-auto"
         >
-          <h1 className="text-base sm:text-xl md:text-2xl font-normal tracking-wide text-red-500 uppercase leading-snug">
+          <h1 className="text-base sm:text-xl md:text-2xl font-normal tracking-wide text-[#A100FF] uppercase leading-snug">
             {project.title} - {project.subtitle} {project.year ? `(${project.year})` : ''}
           </h1>
 
           {/* Minimal Center Divider Line / Dash (Matching Screenshot) */}
-          <div className="w-6 h-[1.5px] bg-red-500 mx-auto mt-2" />
+          <div className="w-6 h-[1.5px] bg-[#A100FF] mx-auto mt-2" />
 
           {project.camera && (
             <p className="mt-2.5 text-[11px] sm:text-xs tracking-widest text-silver-400 uppercase font-mono">
@@ -341,10 +341,10 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/20" />
               <div className="relative z-10">
-                <span className="mb-3 block text-xs font-mono tracking-[0.25em] text-red-400 uppercase">
+                <span className="mb-3 block text-xs font-mono tracking-[0.25em] text-[#A100FF] uppercase">
                   Next Project
                 </span>
-                <span className="block text-3xl font-bold tracking-wide text-white uppercase transition-colors group-hover:text-red-400 sm:text-5xl">
+                <span className="block text-3xl font-bold tracking-wide text-white uppercase transition-colors group-hover:text-[#A100FF] sm:text-5xl">
                   {nextProject.title}
                 </span>
                 <span className="mt-2 block text-base text-silver-200 sm:text-lg">

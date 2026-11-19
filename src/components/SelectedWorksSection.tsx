@@ -257,7 +257,10 @@ export const SelectedWorksSection: React.FC = () => {
             {/* Right Column: 2. Papa Johns (3:2) & 3. WorkEZ (3:2) */}
             <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 w-full">
               {/* 2. Papa Johns (3:2) */}
-              <motion.div variants={itemVariants} className="w-full">
+              <motion.div
+                variants={itemVariants}
+                className="w-full translate-y-5"
+              >
                 <SelectedWorkCard
                   title="CRAFTED TO PERFECTION."
                   subtitle="Papa Johns • Spec Commercial"
@@ -276,7 +279,10 @@ export const SelectedWorksSection: React.FC = () => {
               </motion.div>
 
               {/* 3. WorkEZ (3:2) */}
-              <motion.div variants={itemVariants} className="w-full">
+              <motion.div
+                variants={itemVariants}
+                className="w-full translate-y-13"
+              >
                 <SelectedWorkCard
                   title="A SPACE OF POSSIBILITIES"
                   subtitle="WorkEZ Walkthrough"
