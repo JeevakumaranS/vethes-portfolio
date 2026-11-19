@@ -53,7 +53,7 @@ export const AboutSection: React.FC = () => {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 py-24 sm:py-32 lg:py-40 scroll-mt-20"
+      className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 pt-8 pb-24 sm:pt-10 sm:pb-32 lg:pt-12 lg:pb-40 scroll-mt-20"
     >
       <motion.div
         variants={containerVariants}
@@ -63,11 +63,11 @@ export const AboutSection: React.FC = () => {
         className="mx-auto w-full max-w-[1440px]"
       >
         {/* 2-Column Grid */}
-        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-16 xl:gap-24">
+        <div className="grid items-start gap-10 sm:gap-12 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:gap-16 xl:gap-20">
           {/* Left Column: Portrait Photo with Double Frame */}
           <motion.div
             variants={itemVariants}
-            className="relative mx-auto w-[min(90%,420px,42svh)] max-w-full lg:mx-0"
+            className="relative mx-auto w-full max-w-[320px] sm:max-w-[350px] lg:mx-0"
           >
             {/* Architectural Offset Border */}
             <div
@@ -95,14 +95,12 @@ export const AboutSection: React.FC = () => {
           </motion.div>
 
           {/* Right Column: Statement & Story */}
-          <div className="flex flex-col justify-center lg:pt-2">
-            <motion.h2
-              id="about-title"
-              variants={itemVariants}
-              className="text-[clamp(2.5rem,5.2vw,4.8rem)] font-bold leading-[0.98] tracking-[-0.04em] text-silver-100 uppercase"
-            ></motion.h2>
+          <div className="flex flex-col justify-start pt-1 lg:pt-2">
+            <h2 id="about-title" className="sr-only">
+              About Vethesnan
+            </h2>
 
-            <div className="mt-8 space-y-6 text-base font-light leading-relaxed text-silver-200 sm:mt-10 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9">
+            <div className="space-y-6 text-base font-light leading-relaxed text-silver-200 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9">
               <motion.p variants={itemVariants}>
                 A filmmaker driven by curiosity and a passion for visual
                 storytelling. Working across cinematography, editing and colour
@@ -119,12 +117,12 @@ export const AboutSection: React.FC = () => {
             {/* Contact Details (Email, Phone, Instagram) */}
             <motion.div
               variants={itemVariants}
-              className="mt-12 grid grid-cols-1 gap-4 border-t border-white/10 pt-8 sm:grid-cols-3 sm:gap-5"
+              className="mt-10 sm:mt-12 grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-[1.3fr_1fr_1fr] border-t border-white/10 pt-8"
             >
               {/* Email */}
               <a
                 href="mailto:vethesapoxi@gmail.com"
-                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
+                className="group relative isolate overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:translate-x-[-100%] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.04)_40%,rgba(255,255,255,0.24)_50%,rgba(255,255,255,0.04)_60%,transparent_100%)] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-[''] hover:border-white/30 hover:bg-white/[0.05] hover:before:translate-x-[100%] focus-visible:before:translate-x-[100%]"
               >
                 <div className="flex items-center gap-2 text-[#A100FF]">
                   <Mail className="h-4 w-4" />
@@ -132,7 +130,7 @@ export const AboutSection: React.FC = () => {
                     Email
                   </span>
                 </div>
-                <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors break-all">
+                <p className="mt-2 text-xs sm:text-[13px] md:text-sm font-medium tracking-tight sm:tracking-normal text-white group-hover:text-[#A100FF] transition-colors whitespace-nowrap">
                   vethesapoxi@gmail.com
                 </p>
               </a>
@@ -140,7 +138,7 @@ export const AboutSection: React.FC = () => {
               {/* Phone */}
               <a
                 href="tel:7339566984"
-                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
+                className="group relative isolate overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:translate-x-[-100%] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.04)_40%,rgba(255,255,255,0.24)_50%,rgba(255,255,255,0.04)_60%,transparent_100%)] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-[''] hover:border-white/30 hover:bg-white/[0.05] hover:before:translate-x-[100%] focus-visible:before:translate-x-[100%]"
               >
                 <div className="flex items-center gap-2 text-[#A100FF]">
                   <Phone className="h-4 w-4" />
@@ -148,7 +146,7 @@ export const AboutSection: React.FC = () => {
                     Phone
                   </span>
                 </div>
-                <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors">
+                <p className="mt-2 text-xs sm:text-[13px] md:text-sm font-medium tracking-tight sm:tracking-normal text-white group-hover:text-[#A100FF] transition-colors whitespace-nowrap">
                   7339566984
                 </p>
               </a>
@@ -158,7 +156,7 @@ export const AboutSection: React.FC = () => {
                 href="https://instagram.com/_vethes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
+                className="group relative isolate overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:translate-x-[-100%] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.04)_40%,rgba(255,255,255,0.24)_50%,rgba(255,255,255,0.04)_60%,transparent_100%)] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-[''] hover:border-white/30 hover:bg-white/[0.05] hover:before:translate-x-[100%] focus-visible:before:translate-x-[100%]"
               >
                 <div className="flex items-center gap-2 text-[#A100FF]">
                   <InstagramIcon className="h-4 w-4" />
@@ -166,7 +164,7 @@ export const AboutSection: React.FC = () => {
                     Instagram
                   </span>
                 </div>
-                <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors">
+                <p className="mt-2 text-xs sm:text-[13px] md:text-sm font-medium tracking-tight sm:tracking-normal text-white group-hover:text-[#A100FF] transition-colors whitespace-nowrap">
                   _vethes
                 </p>
               </a>

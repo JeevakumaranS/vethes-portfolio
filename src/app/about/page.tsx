@@ -74,11 +74,11 @@ export default function AboutPage() {
             className="mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 xl:px-20"
           >
             {/* Asymmetric 2-Column Hero Grid */}
-            <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:gap-16 xl:gap-24">
+            <div className="grid items-start gap-10 sm:gap-12 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:gap-16 xl:gap-20">
               {/* Left Column: Portrait Photograph with Filmic Frame */}
               <motion.div
                 variants={itemVariants}
-                className="relative w-full max-w-[540px]"
+                className="relative mx-auto w-full max-w-[320px] sm:max-w-[350px] lg:mx-0"
               >
                 {/* Architectural Offset Border */}
                 <div
@@ -134,12 +134,12 @@ export default function AboutPage() {
                 {/* Contact Details (Email, Phone, Instagram) */}
                 <motion.div
                   variants={itemVariants}
-                  className="mt-12 grid grid-cols-1 gap-4 border-t border-white/10 pt-8 sm:grid-cols-3 sm:gap-6"
+                  className="mt-10 sm:mt-12 grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-[1.3fr_1fr_1fr] border-t border-white/10 pt-8"
                 >
                   {/* Email */}
                   <a
                     href="mailto:vethesapoxi@gmail.com"
-                    className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
+                    className="group relative isolate overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:translate-x-[-100%] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.04)_40%,rgba(255,255,255,0.24)_50%,rgba(255,255,255,0.04)_60%,transparent_100%)] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-[''] hover:border-white/30 hover:bg-white/[0.05] hover:before:translate-x-[100%] focus-visible:before:translate-x-[100%]"
                   >
                     <div className="flex items-center gap-2 text-[#A100FF]">
                       <Mail className="h-4 w-4" />
@@ -147,7 +147,7 @@ export default function AboutPage() {
                         Email
                       </span>
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors break-all">
+                    <p className="mt-2 text-xs sm:text-[13px] md:text-sm font-medium tracking-tight sm:tracking-normal text-white group-hover:text-[#A100FF] transition-colors whitespace-nowrap">
                       vethesapoxi@gmail.com
                     </p>
                   </a>
@@ -155,7 +155,7 @@ export default function AboutPage() {
                   {/* Phone */}
                   <a
                     href="tel:7339566984"
-                    className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
+                    className="group relative isolate overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:translate-x-[-100%] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.04)_40%,rgba(255,255,255,0.24)_50%,rgba(255,255,255,0.04)_60%,transparent_100%)] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-[''] hover:border-white/30 hover:bg-white/[0.05] hover:before:translate-x-[100%] focus-visible:before:translate-x-[100%]"
                   >
                     <div className="flex items-center gap-2 text-[#A100FF]">
                       <Phone className="h-4 w-4" />
@@ -163,7 +163,7 @@ export default function AboutPage() {
                         Phone
                       </span>
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors">
+                    <p className="mt-2 text-xs sm:text-[13px] md:text-sm font-medium tracking-tight sm:tracking-normal text-white group-hover:text-[#A100FF] transition-colors whitespace-nowrap">
                       7339566984
                     </p>
                   </a>
@@ -173,7 +173,7 @@ export default function AboutPage() {
                     href="https://instagram.com/_vethes"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.05] sm:p-5"
+                    className="group relative isolate overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:translate-x-[-100%] before:bg-[linear-gradient(110deg,transparent_0%,rgba(255,255,255,0.04)_40%,rgba(255,255,255,0.24)_50%,rgba(255,255,255,0.04)_60%,transparent_100%)] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] before:content-[''] hover:border-white/30 hover:bg-white/[0.05] hover:before:translate-x-[100%] focus-visible:before:translate-x-[100%]"
                   >
                     <div className="flex items-center gap-2 text-[#A100FF]">
                       <InstagramIcon className="h-4 w-4" />
@@ -181,7 +181,7 @@ export default function AboutPage() {
                         Instagram
                       </span>
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium tracking-wide text-white group-hover:text-[#A100FF] transition-colors">
+                    <p className="mt-2 text-xs sm:text-[13px] md:text-sm font-medium tracking-tight sm:tracking-normal text-white group-hover:text-[#A100FF] transition-colors whitespace-nowrap">
                       _vethes
                     </p>
                   </a>
