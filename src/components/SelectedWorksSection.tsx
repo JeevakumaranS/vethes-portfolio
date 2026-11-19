@@ -145,7 +145,7 @@ const SelectedWorkCard: React.FC<SelectedWorkCardProps> = ({
   const captionContent = (
     <>
       <span className="block overflow-hidden">
-        <span className="block font-sans text-base font-bold leading-5 tracking-normal uppercase transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none [@media(hover:hover)]:translate-y-full [@media(hover:hover)]:group-hover:translate-y-0 group-focus-within:translate-y-0">
+        <span className="block font-sans text-base font-bold leading-5 tracking-normal text-[#A100FF] uppercase transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none [@media(hover:hover)]:translate-y-full [@media(hover:hover)]:group-hover:translate-y-0 group-focus-within:translate-y-0">
           {title}
         </span>
       </span>
