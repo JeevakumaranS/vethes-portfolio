@@ -113,7 +113,7 @@ export const PROJECTS: Project[] = [
     category: "commercial",
     portfolioCategory: "cinematography",
     poster: rifleThumbnail.src,
-    // descriptionHeading: "LOCK ON. LEVEL UP.",
+    // descriptionHeading: "LOCK OadsfaN. LEVEL UP.",
     description:
       "An action-inspired launch teaser created to build anticipation for the opening of SLAM Fitness Studio in Madurai. Using suspense, sharp visuals and a striking reveal, the film turns the anticipation of a new fitness destination into a cinematic experience.",
     client: "SLAM Fitness Studio, Madurai",
