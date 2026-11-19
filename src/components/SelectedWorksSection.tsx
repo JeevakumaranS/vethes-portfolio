@@ -161,7 +161,7 @@ const SelectedWorkCard: React.FC<SelectedWorkCardProps> = ({
     <span className="pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden p-4 pt-12 text-left text-white">
       <span
         aria-hidden="true"
-        className="absolute inset-0 translate-y-full bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none [@media(hover:hover)]:group-hover:translate-y-0 group-focus-within:translate-y-0"
+        className="absolute inset-0 [@media(hover:hover)]:translate-y-full [@media(hover:hover)]:group-hover:translate-y-0 group-focus-within:translate-y-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none"
       />
       <span className="relative z-10">{captionContent}</span>
     </span>
@@ -197,7 +197,7 @@ export const SelectedWorksSection: React.FC = () => {
     <section
       id="selected-works"
       aria-label="Selected Works"
-      className="relative overflow-hidden w-full px-6 sm:px-10 lg:px-16 xl:px-20 pt-20 pb-8 sm:pt-28 sm:pb-10 lg:pt-36 lg:pb-12 scroll-mt-20"
+      className="relative overflow-hidden w-full px-6 sm:px-10 lg:px-16 xl:px-20 pt-20 pb-12 sm:pt-28 sm:pb-16 lg:pt-36 lg:pb-20 scroll-mt-20"
     >
       {/* Background Signature Watermark Overlays for Subtle Branding */}
       <div
@@ -223,28 +223,33 @@ export const SelectedWorksSection: React.FC = () => {
         >
           {/* FIRST HALF: Asymmetric Layout matching user photo */}
           {/* Left: 1 (2:3 Sierra EV) | Right: 2 (3:2 Papa Johns) + 3 (3:2 WorkEZ) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 items-stretch">
             {/* 1. Sierra EV (2:3) */}
-            <motion.div variants={itemVariants} className="w-full">
+            <motion.div
+              variants={itemVariants}
+              className="w-full h-full flex flex-col"
+            >
               <SelectedWorkCard
                 title="new arrival new era "
                 subtitle="Sierra EV • Launch Film"
-                aspectRatio="18 / 25"
+                aspectRatio="4 / 5"
+                // className="w-full h-full flex-1 aspect-[4/5] md:aspect-auto"
                 href="/project/sierra-ev"
               >
                 <Image
                   src={sierraEvThumbnail}
-                  alt=""
+                  alt="Sierra EV Launch Film"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
-                  className="object-cover"
+                  className="object-cover object-[50%_40%]"
+                  priority
                 />
               </SelectedWorkCard>
             </motion.div>
 
             {/* Right Column: 2. Papa Johns (3:2) & 3. WorkEZ (3:2) */}
-            <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 w-full">
+            <div className="flex flex-col justify-between gap-4 sm:gap-5 lg:gap-6 w-full h-full">
               {/* 2. Papa Johns (3:2) */}
               <motion.div variants={itemVariants} className="w-full">
                 <SelectedWorkCard
@@ -255,98 +260,99 @@ export const SelectedWorksSection: React.FC = () => {
                 >
                   <Image
                     src="https://vumbnail.com/1247729292.jpg"
-                    alt=""
+                    alt="Papa Johns Spec Commercial"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </SelectedWorkCard>
               </motion.div>
 
               {/* 3. WorkEZ (3:2) */}
-              <motion.div
-                variants={itemVariants}
-                className="w-full translate-y-3"
-              >
+              <motion.div variants={itemVariants} className="w-full">
                 <SelectedWorkCard
                   title="A SPACE OF POSSIBILITIES"
-                  subtitle="WorkEZ • Walkthrough Flim"
+                  subtitle="WorkEZ • Walkthrough Film"
                   aspectRatio="3 / 2"
                   href="/project/workez-walkthrough"
                 >
                   <Image
                     src={workezThumbnail}
-                    alt=""
+                    alt="WorkEZ Walkthrough Film"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </SelectedWorkCard>
               </motion.div>
             </div>
           </div>
 
-          {/* SECOND HALF: Remaining Three Projects (Pending User Layout Decision) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
-            {/* 4. Sierra Testimonial */}
-            <motion.div variants={itemVariants} className="w-full">
-              <SelectedWorkCard
-                title="A Legacy reborn"
-                subtitle="Tata Sierra • Testimonial Film"
-                aspectRatio="16 / 10"
-                href="/project/sierra-testimonial"
-              >
-                <Image
-                  src={testimonialThumbnail}
-                  alt=""
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  quality={90}
-                  className="object-cover"
-                />
-              </SelectedWorkCard>
-            </motion.div>
-
-            {/* 5. SLAM Fitness */}
+          {/* SECOND HALF: Asymmetric Layout matching user photo */}
+          {/* Row 1: 4 (4:5 Lock on Level UP) & 5 (4:5 A Reason to Shine) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+            {/* 4. SLAM Fitness (4:5) */}
             <motion.div variants={itemVariants} className="w-full">
               <SelectedWorkCard
                 title="Lock on Level UP"
                 subtitle="SLAM Fitness Studio • Opening Promo"
-                aspectRatio="16 / 10"
+                aspectRatio="4 / 5"
+                className="aspect-[4/5]"
                 href="/project/slam-fitness"
               >
                 <Image
                   src={rifleThumbnail}
-                  alt=""
+                  alt="SLAM Fitness Studio Opening Promo"
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
                   className="object-cover"
                 />
               </SelectedWorkCard>
             </motion.div>
 
-            {/* 6. Pothys Swarna Mahal */}
+            {/* 5. Pothys Swarna Mahal (4:5) */}
             <motion.div variants={itemVariants} className="w-full">
               <SelectedWorkCard
                 title="A REASON TO SHINE"
                 subtitle="Pothys Swarna Mahal • Promotional Film"
-                aspectRatio="16 / 10"
+                aspectRatio="4 / 5"
+                className="aspect-[4/5]"
                 href="/project/pothys-swarnamahal"
               >
                 <Image
                   src={pothysThumbnail}
-                  alt=""
+                  alt="Pothys Swarna Mahal Promotional Film"
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
-                  className="object-cover object-[50%_36%]"
+                  className="object-cover object-[50%_35%]"
                 />
               </SelectedWorkCard>
             </motion.div>
           </div>
+
+          {/* Row 2: 6 (21:9 A Legacy Reborn - Cinematic Full-Width Ultrawide) */}
+          <motion.div variants={itemVariants} className="w-full">
+            <SelectedWorkCard
+              title="A Legacy reborn"
+              subtitle="Tata Sierra • Testimonial Film"
+              aspectRatio="21 / 9"
+              className="w-full aspect-[21/9]"
+              href="/project/sierra-testimonial"
+            >
+              <Image
+                src={testimonialThumbnail}
+                alt="Tata Sierra Testimonial Film"
+                fill
+                sizes="100vw"
+                quality={90}
+                className="object-cover object-center"
+              />
+            </SelectedWorkCard>
+          </motion.div>
         </motion.div>
       </div>
     </section>

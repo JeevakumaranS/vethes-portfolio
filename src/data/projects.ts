@@ -87,7 +87,7 @@ export const PROJECTS: Project[] = [
     poster: workezThumbnail.src,
     embedUrl:
       "https://player.vimeo.com/video/1247960038?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    stills: [workezThumbnail.src, workezThumbnail.src],
+    // stills: [workezThumbnail.src, workezThumbnail.src],
   },
   {
     id: "papa-johns",
@@ -121,7 +121,7 @@ export const PROJECTS: Project[] = [
     videoOrientation: "portrait",
     embedUrl:
       "https://player.vimeo.com/video/1247979901?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    stills: [rifleThumbnail.src, rifleThumbnail.src],
+    // stills: [rifleThumbnail.src, rifleThumbnail.src],
   },
   {
     id: "pothys-swarnamahal",
@@ -138,6 +138,6 @@ export const PROJECTS: Project[] = [
     poster: pothysThumbnail.src,
     embedUrl:
       "https://player.vimeo.com/video/1247735250?autopause=0&player_id=0&app_id=58479",
-    stills: [pothysThumbnail.src, pothysThumbnail.src],
+    // stills: [pothysThumbnail.src, pothysThumbnail.src],
   },
 ];

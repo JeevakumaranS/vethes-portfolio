@@ -13,38 +13,8 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
-  const handleSelectedWorksClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-  ) => {
-    const target = document.getElementById("selected-works");
-    if (target) {
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      try {
-        window.history.pushState(null, "", "/#selected-works");
-      } catch (_) {}
-    } else {
-      event.preventDefault();
-      window.location.assign("/#selected-works");
-    }
-  };
-
-  const handleAboutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    const target = document.getElementById("about");
-    if (target) {
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      try {
-        window.history.pushState(null, "", "/#about");
-      } catch (_) {}
-    } else {
-      event.preventDefault();
-      window.location.assign("/#about");
-    }
-  };
-
   return (
-    <header className="fixed top-0 w-full z-50 pt-safe bg-black/80 backdrop-blur-md transition-all">
+    <header className="fixed top-0 w-full z-50 pt-safe transition-all">
       <motion.div
         initial={{ opacity: 0, y: -20, filter: "blur(6px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -67,7 +37,6 @@ export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
         >
           <Link
             href="/#selected-works"
-            onClick={handleSelectedWorksClick}
             onMouseEnter={() => setHoveredCategory("selected-works")}
             className={`text-white transition-opacity duration-200 ease-in-out ${
               hoveredCategory && hoveredCategory !== "selected-works"
@@ -79,7 +48,6 @@ export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
           </Link>
           <Link
             href="/#about"
-            onClick={handleAboutClick}
             onMouseEnter={() => setHoveredCategory("about")}
             className={`text-white transition-opacity duration-200 ease-in-out ${
               hoveredCategory && hoveredCategory !== "about"

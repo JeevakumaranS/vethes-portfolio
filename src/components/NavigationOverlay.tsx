@@ -13,38 +13,6 @@ export const NavigationOverlay: React.FC<NavigationOverlayProps> = ({
   isOpen,
   onClose,
 }) => {
-  const handleSelectedWorksClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-  ) => {
-    onClose();
-    const target = document.getElementById("selected-works");
-    if (target) {
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      try {
-        window.history.pushState(null, "", "/#selected-works");
-      } catch (_) {}
-    } else {
-      event.preventDefault();
-      window.location.assign("/#selected-works");
-    }
-  };
-
-  const handleAboutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    onClose();
-    const target = document.getElementById("about");
-    if (target) {
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      try {
-        window.history.pushState(null, "", "/#about");
-      } catch (_) {}
-    } else {
-      event.preventDefault();
-      window.location.assign("/#about");
-    }
-  };
-
   return (
     <div
       id="nav-overlay"
@@ -71,7 +39,7 @@ export const NavigationOverlay: React.FC<NavigationOverlayProps> = ({
         <nav className="flex flex-col gap-5">
           <Link
             href="/#selected-works"
-            onClick={handleSelectedWorksClick}
+            onClick={onClose}
             className="text-2xl font-light tracking-[0.16em] uppercase text-white hover:text-silver-400 transition-colors flex items-center justify-between group"
           >
             <span>SELECTED WORKS</span>
@@ -81,7 +49,7 @@ export const NavigationOverlay: React.FC<NavigationOverlayProps> = ({
           </Link>
           <Link
             href="/#about"
-            onClick={handleAboutClick}
+            onClick={onClose}
             className="text-2xl font-light tracking-[0.16em] uppercase text-silver-300 hover:text-white transition-colors flex items-center justify-between group"
           >
             <span>ABOUT</span>

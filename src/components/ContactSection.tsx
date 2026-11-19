@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { motion, type Variants } from 'motion/react';
+import React from "react";
+import Link from "next/link";
+import { motion, type Variants } from "motion/react";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -16,14 +16,14 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 35, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 35, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
+    filter: "blur(0px)",
     transition: {
       duration: 0.85,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -39,20 +39,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 }) => {
   const [currentYear, setCurrentYear] = React.useState<number | null>(null);
 
-  const handleLetsTalkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    const target = document.getElementById('about');
-    if (target) {
-      event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      try {
-        window.history.pushState(null, '', '/#about');
-      } catch (_) {}
-    } else {
-      event.preventDefault();
-      window.location.assign('/#about');
-    }
-  };
-
   React.useEffect(() => {
     const timer = window.setTimeout(() => {
       setCurrentYear(new Date().getFullYear());
@@ -65,7 +51,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     <footer
       id="about-inquiry"
       className={`w-full bg-black text-white px-6 sm:px-10 lg:px-16 xl:px-20 pt-28 sm:pt-36 ${
-        compact ? 'pb-6 sm:pb-8' : 'pb-16 sm:pb-24'
+        compact ? "pb-6 sm:pb-8" : "pb-16 sm:pb-24"
       } flex flex-col justify-between select-none`}
     >
       <motion.div
@@ -90,13 +76,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
           {/* Line 2: ~ Let's talk. */}
           <div className="w-full text-right py-1 mt-0">
-            <motion.div
-              variants={itemVariants}
-              className="inline-block"
-            >
+            <motion.div variants={itemVariants} className="inline-block">
               <Link
                 href="/#about"
-                onClick={handleLetsTalkClick}
                 className="group font-serif italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white hover:text-silver-300 transition-colors inline-flex items-baseline gap-2 cursor-pointer"
               >
                 <span className="not-italic font-light text-silver-400 group-hover:text-white transition-colors">
@@ -113,13 +95,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
       {/* Footer Bottom Border & Copyright */}
       <motion.div
-        initial={{ opacity: 0, y: 35, filter: 'blur(6px)' }}
-        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{
           duration: 0.85,
           delay: 0.36,
-          ease: 'easeOut',
+          ease: "easeOut",
         }}
         className="max-w-7xl mx-auto w-full mt-24 pt-6 border-t border-white/10 flex items-center justify-center text-center"
       >
