@@ -67,7 +67,7 @@ export const AboutSection: React.FC = () => {
           {/* Left Column: Portrait Photo with Double Frame */}
           <motion.div
             variants={itemVariants}
-            className="relative mx-auto w-full max-w-[520px] lg:mx-0"
+            className="relative mx-auto w-[min(90%,420px,42svh)] max-w-full lg:mx-0"
           >
             {/* Architectural Offset Border */}
             <div

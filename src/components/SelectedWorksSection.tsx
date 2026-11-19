@@ -209,21 +209,6 @@ export const SelectedWorksSection: React.FC = () => {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px]">
-        {/* Minimalist Top Tag */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-8 sm:mb-12 flex items-center gap-4"
-        >
-          <span className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.3em] text-red-500 uppercase">
-            <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-            Selected Works
-          </span>
-          <span aria-hidden="true" className="h-px flex-1 bg-white/10" />
-        </motion.div>
-
         {/* Bento / Modular Mixed Editorial Grid matching Reference */}
         <motion.div
           variants={containerVariants}
@@ -238,9 +223,9 @@ export const SelectedWorksSection: React.FC = () => {
             {/* 1. Sierra EV (2:3) */}
             <motion.div variants={itemVariants} className="w-full">
               <SelectedWorkCard
-                title="A LEGEND RETURNS"
-                subtitle="Insta Reel"
-                aspectRatio="2 / 3"
+                title="new arrival new era "
+                subtitle="Sierra EV • Launch Film"
+                aspectRatio="18 / 25"
                 href="/project/sierra-ev"
               >
                 <Image
@@ -257,12 +242,9 @@ export const SelectedWorksSection: React.FC = () => {
             {/* Right Column: 2. Papa Johns (3:2) & 3. WorkEZ (3:2) */}
             <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 w-full">
               {/* 2. Papa Johns (3:2) */}
-              <motion.div
-                variants={itemVariants}
-                className="w-full translate-y-5"
-              >
+              <motion.div variants={itemVariants} className="w-full">
                 <SelectedWorkCard
-                  title="CRAFTED TO PERFECTION."
+                  title="CRAFTED TO PERFECTION"
                   subtitle="Papa Johns • Spec Commercial"
                   aspectRatio="3 / 2"
                   href="/project/papa-johns"
@@ -281,11 +263,11 @@ export const SelectedWorksSection: React.FC = () => {
               {/* 3. WorkEZ (3:2) */}
               <motion.div
                 variants={itemVariants}
-                className="w-full translate-y-13"
+                className="w-full translate-y-3"
               >
                 <SelectedWorkCard
                   title="A SPACE OF POSSIBILITIES"
-                  subtitle="WorkEZ Walkthrough"
+                  subtitle="WorkEZ • Walkthrough Flim"
                   aspectRatio="3 / 2"
                   href="/project/workez-walkthrough"
                 >
@@ -307,8 +289,8 @@ export const SelectedWorksSection: React.FC = () => {
             {/* 4. Sierra Testimonial */}
             <motion.div variants={itemVariants} className="w-full">
               <SelectedWorkCard
-                title="SIERRA TESTIMONIAL"
-                subtitle="Customer Testimonial"
+                title="A Legacy reborn"
+                subtitle="Tata Sierra • Testimonial Film"
                 aspectRatio="16 / 10"
                 href="/project/sierra-testimonial"
               >
@@ -326,8 +308,8 @@ export const SelectedWorksSection: React.FC = () => {
             {/* 5. SLAM Fitness */}
             <motion.div variants={itemVariants} className="w-full">
               <SelectedWorkCard
-                title="Rifle hype"
-                subtitle="SLAM Fitness Studio • Launch Teaser"
+                title="Lock on Level UP"
+                subtitle="SLAM Fitness Studio • Opening Promo"
                 aspectRatio="16 / 10"
                 href="/project/slam-fitness"
               >
@@ -345,7 +327,7 @@ export const SelectedWorksSection: React.FC = () => {
             {/* 6. Pothys Swarna Mahal */}
             <motion.div variants={itemVariants} className="w-full">
               <SelectedWorkCard
-                title="A REASON TO SHINE."
+                title="A REASON TO SHINE"
                 subtitle="Pothys Swarna Mahal • Promotional Film"
                 aspectRatio="16 / 10"
                 href="/project/pothys-swarnamahal"

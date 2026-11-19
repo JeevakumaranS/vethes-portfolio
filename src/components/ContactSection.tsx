@@ -39,6 +39,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 }) => {
   const [currentYear, setCurrentYear] = React.useState<number | null>(null);
 
+  const handleLetsTalkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = document.getElementById('about');
+    if (target) {
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try {
+        window.history.pushState(null, '', '/#about');
+      } catch (_) {}
+    } else {
+      event.preventDefault();
+      window.location.assign('/#about');
+    }
+  };
+
   React.useEffect(() => {
     const timer = window.setTimeout(() => {
       setCurrentYear(new Date().getFullYear());
@@ -82,6 +96,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             >
               <Link
                 href="/#about"
+                onClick={handleLetsTalkClick}
                 className="group font-serif italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white hover:text-silver-300 transition-colors inline-flex items-baseline gap-2 cursor-pointer"
               >
                 <span className="not-italic font-light text-silver-400 group-hover:text-white transition-colors">

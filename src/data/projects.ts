@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "papa-johns",
-    title: "CRAFTED TO PERFECTION.",
+    title: "CRAFTED TO PERFECTION",
     subtitle: "Papa Johns • Spec Commercial",
     category: "commercial",
     poster: "https://vumbnail.com/1247729292.jpg",

@@ -16,12 +16,21 @@ export default function Home() {
       const sectionId = window.location.hash.slice(1);
       if (!sectionId) return;
 
-      window.requestAnimationFrame(() => {
-        document.getElementById(sectionId)?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      });
+      let retries = 10;
+      const attemptScroll = () => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        } else if (retries > 0) {
+          retries -= 1;
+          setTimeout(attemptScroll, 60);
+        }
+      };
+
+      attemptScroll();
     };
 
     scrollToHash();

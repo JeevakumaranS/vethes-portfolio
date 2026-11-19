@@ -73,18 +73,6 @@ export default function AboutPage() {
             animate="visible"
             className="mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 xl:px-20"
           >
-            {/* Top Minimalist Tag */}
-            <motion.div
-              variants={itemVariants}
-              className="mb-8 flex items-center gap-4 sm:mb-12"
-            >
-              <span className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.3em] text-[#A100FF] uppercase">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#A100FF]" />
-                About the Filmmaker
-              </span>
-              <span aria-hidden="true" className="h-px flex-1 bg-white/10" />
-            </motion.div>
-
             {/* Asymmetric 2-Column Hero Grid */}
             <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.2fr)] lg:gap-16 xl:gap-24">
               {/* Left Column: Portrait Photograph with Filmic Frame */}
