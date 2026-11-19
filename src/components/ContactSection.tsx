@@ -37,14 +37,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   return (
     <footer
       id="about-inquiry"
-      className="w-full bg-black text-white px-6 sm:px-10 lg:px-16 pt-24 pb-12 flex flex-col justify-between select-none"
+      className="w-full bg-black text-white px-6 sm:px-10 lg:px-16 xl:px-20 pt-28 sm:pt-36 pb-16 sm:pb-24 flex flex-col justify-between select-none"
     >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="max-w-7xl mx-auto w-full flex flex-col items-end"
+        className="max-w-[1440px] mx-auto w-full flex flex-col items-end"
       >
         {/* Kinetic Slide-Up Typography with Hero Section Blur & Slide Transition */}
         <div className="flex flex-col items-end w-full">

@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
         initial={{ opacity: 0, y: -20, filter: "blur(6px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.85, ease: "easeOut" }}
-        className="h-20 px-6 sm:px-10 lg:px-16 flex items-center justify-between w-full max-w-7xl mx-auto text-white"
+        className="h-20 px-6 sm:px-10 lg:px-16 xl:px-20 flex items-center justify-between w-full max-w-[1440px] mx-auto text-white"
       >
         {/* Top Left: Signature Brand Mark (Pure White) */}
         <Link

@@ -33,7 +33,7 @@ export default function Home() {
       />
 
       {/* FOREGROUND CURTAIN WRAPPER */}
-      <div className="relative z-10 bg-black shadow-2xl mb-0 pb-12">
+      <div className="relative z-10 bg-black shadow-2xl mb-0">
         {/* HERO SECTION */}
         <HeroSection onExploreClick={handleScrollToSelectedWorks} />
 

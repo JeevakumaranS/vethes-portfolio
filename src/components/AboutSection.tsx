@@ -53,7 +53,7 @@ export const AboutSection: React.FC = () => {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="w-full px-5 pb-24 pt-24 scroll-mt-20 sm:px-8 sm:pb-32 sm:pt-32 lg:px-14 xl:px-16"
+      className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 py-24 sm:py-32 lg:py-40 scroll-mt-20"
     >
       <motion.div
         variants={containerVariants}
@@ -65,7 +65,7 @@ export const AboutSection: React.FC = () => {
         {/* Minimalist Top Tag */}
         <motion.div
           variants={itemVariants}
-          className="mb-10 flex items-center gap-4 sm:mb-14"
+          className="mb-14 sm:mb-20 lg:mb-24 flex items-center gap-4"
         >
           <span className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.3em] text-red-500 uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-red-500" />

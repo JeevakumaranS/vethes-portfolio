@@ -71,7 +71,7 @@ export default function AboutPage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 md:px-12 lg:px-16"
+            className="mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 xl:px-20"
           >
             {/* Top Minimalist Tag */}
             <motion.div

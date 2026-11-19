@@ -49,7 +49,7 @@ export const PortfolioCategoryPage: React.FC<PortfolioCategoryPageProps> = ({
       <main className="w-full bg-black">
         <section
           id="projects-grid"
-          className="w-full px-5 sm:px-7 pt-32 sm:pt-44 lg:pt-64 pb-24"
+          className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 pt-32 sm:pt-44 lg:pt-56 pb-24 sm:pb-32"
         >
           <div className="mx-auto w-full max-w-[1680px]">
             <motion.h1

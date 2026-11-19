@@ -59,7 +59,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
   };
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between items-center text-center px-6 pt-32 pb-12 bg-black select-none overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col justify-between items-center text-center px-6 sm:px-10 lg:px-16 xl:px-20 pt-36 sm:pt-40 md:pt-44 pb-16 sm:pb-20 bg-black select-none overflow-hidden">
       {/* Spacer to balance vertical alignment */}
       <div className="hidden sm:block h-6" />
 
