@@ -109,7 +109,7 @@ export const PROJECTS: Project[] = [
   {
     id: "slam-fitness",
     title: "LOCK ON LEVEL UP",
-    subtitle: "SLAM Fitness Studio • Launch Teaser",
+    subtitle: "SLAM Fitness Studio • Opening Promo",
     category: "commercial",
     portfolioCategory: "cinematography",
     poster: rifleThumbnail.src,
