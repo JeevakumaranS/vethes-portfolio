@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
             width={212}
             height={109}
             unoptimized
-            className="h-14 sm:h-19 w-auto"
+            className="h-14 sm:h-14 w-auto"
           />
         </Link>
 

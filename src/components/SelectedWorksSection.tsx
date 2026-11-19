@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { SignatureLogo } from "@/components/SignatureLogo";
 import workezThumbnail from "@/assets/thumbnails/workez.jpg.jpeg";
+import papaJohnsThumbnail from "@/assets/thumbnails/papa john pic00090153.jpg.jpeg";
 import rifleThumbnail from "@/assets/thumbnails/Rifle pic.jpg.jpeg";
 import pothysThumbnail from "@/assets/thumbnails/Pothys pic.jpg.jpeg";
 import sierraEvThumbnail from "@/assets/thumbnails/sierra ev1_00109731.jpg.jpeg";
@@ -259,7 +260,7 @@ export const SelectedWorksSection: React.FC = () => {
                   href="/project/papa-johns"
                 >
                   <Image
-                    src="https://vumbnail.com/1247729292.jpg"
+                    src={papaJohnsThumbnail}
                     alt="Papa Johns Spec Commercial"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
