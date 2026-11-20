@@ -4,13 +4,11 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Play } from "lucide-react";
-import { Project } from "@/types/portfolio";
+import type { Project } from "@/types/portfolio";
 
 interface VideoCardProps {
   project: Project;
-  index?: number;
-  href?: string;
-  onOpenModal?: (project: Project) => void;
+  index: number;
 }
 
 interface RollingTextProps {
@@ -43,12 +41,9 @@ const RollingText: React.FC<RollingTextProps> = ({
 
 export const VideoCard: React.FC<VideoCardProps> = ({
   project,
-  index = 0,
-  href,
-  onOpenModal,
+  index,
 }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const targetHref = href || `/project/${project.id}`;
 
   const handleMouseEnter = () => {
     if (videoRef.current) {
@@ -80,16 +75,8 @@ export const VideoCard: React.FC<VideoCardProps> = ({
     }, 3500);
   };
 
-  const handleClick = (e: React.MouseEvent) => {
-    if (onOpenModal) {
-      e.preventDefault();
-      onOpenModal(project);
-    }
-  };
-
   return (
     <motion.article
-      data-category={project.category}
       initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.12 }}
@@ -101,8 +88,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({
       className="project-card video-card flex flex-col group cursor-pointer transition-all duration-300 w-full"
     >
       <Link
-        href={targetHref}
-        onClick={handleClick}
+        href={`/project/${project.id}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onTouchStart={handleTouchStart}

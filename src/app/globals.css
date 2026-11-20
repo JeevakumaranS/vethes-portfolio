@@ -7,13 +7,8 @@
   --font-serif: var(--font-cormorant), "Times New Roman", Times, Georgia, serif;
 
   --color-black: #000000;
-  --color-accent: #a100ff;
-
-  --color-charcoal-950: #070707;
   --color-charcoal-900: #101010;
   --color-charcoal-800: #181818;
-  --color-charcoal-700: #222222;
-  --color-charcoal-600: #2f2f2f;
 
   --color-silver-100: #f5f5f5;
   --color-silver-200: #e5e5e5;
@@ -35,21 +30,9 @@
   body {
     overscroll-behavior: none;
   }
-  .pb-safe {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
   .pt-safe {
     padding-top: env(safe-area-inset-top, 0px);
   }
-}
-
-/* Custom scrollbar hiding */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 /* Always display all images, posters, and video previews in their full, vibrant original colors (NO black-and-white / NO grayscale) */

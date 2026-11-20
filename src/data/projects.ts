@@ -1,37 +1,8 @@
-import { Project, FeaturedReelItem, ModalReelItem } from "@/types/portfolio";
+import type { Project } from "@/types/portfolio";
 import workezThumbnail from "@/assets/thumbnails/workez.jpg.jpeg";
 import rifleThumbnail from "@/assets/thumbnails/Rifle pic.jpg.jpeg";
 import pothysThumbnail from "@/assets/thumbnails/Pothys pic.jpg.jpeg";
 import papaJohnsThumbnail from "@/assets/thumbnails/papa john pic00090153.jpg.jpeg";
-
-export const FEATURED_REEL: FeaturedReelItem = {
-  tag: "DIRECTOR REEL",
-  title: "SELECTED WORKS • VOL. IV",
-  badge: "PREVIEW",
-  poster:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDOycibJkLmvryhAEW8ij65M1eXbsCX1e-iwJWNB4OxkAl73psh5EnlXalOTNiMjgJyHnS1y0bkVfF6t80I71OW_7yJiixT0MO6gvowFydRX76g7IhI5PWI5-mGXEuLDcgnTqqD9xb3sdksPbMXDFgr2MSgaKcHl3sy-hEqH3Y2GmoFdWcxJaZMuDEaz4kHT61uCR7nsKKzuPUeh74sPfL7xDA_yTv9Hoa_6Pe7YMoP",
-  videoSrc:
-    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-};
-
-export const DEFAULT_MODAL_REEL: ModalReelItem = {
-  title: "2026 DIRECTOR & DP SHOWREEL",
-  duration: "02:45 / 02:45",
-  poster:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCH0HHwOtKgvMSYPAjo84U53RphlNBC3C-jDFvNucvmUDxl58LsVGPd0eJyRNE78-7UoP6lcGskwPl87RmKKptogNTh1IKBBHXpJfx3Lkp1niCHcHFMoFNHfVgBX1p1rCdApDhiVIeDqEWRDqG3nhFGdhY6WPZW1ABlUPEWP_K61cDzIs8V6OO1fSgPKijAnOy2Du_SHLTZxg5HPgy6yTLNZpNbmrj6qxa-LlldjlNG",
-  videoSrc:
-    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-};
-
-export const CATEGORIES: {
-  label: string;
-  value: "all" | "narrative" | "commercial" | "music-video";
-}[] = [
-  { label: "ALL", value: "all" },
-  { label: "NARRATIVE", value: "narrative" },
-  { label: "COMMERCIAL", value: "commercial" },
-  { label: "MUSIC VIDEO", value: "music-video" },
-];
 
 export const PROJECTS: Project[] = [
   {
@@ -48,10 +19,6 @@ export const PROJECTS: Project[] = [
     poster: "https://vumbnail.com/1247723283.jpg",
     embedUrl:
       "https://player.vimeo.com/video/1247723283?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    // stills: [
-    //   "https://vumbnail.com/1247723283.jpg",
-    //   "https://vumbnail.com/1247723283.jpg",
-    // ],
   },
   {
     id: "sierra-testimonial",
@@ -68,10 +35,6 @@ export const PROJECTS: Project[] = [
     videoOrientation: "landscape",
     embedUrl:
       "https://player.vimeo.com/video/1247726394?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    // stills: [
-    //   "https://vumbnail.com/1247726394.jpg",
-    //   "https://vumbnail.com/1247726394.jpg",
-    // ],
   },
   {
     id: "workez-walkthrough",
@@ -88,7 +51,6 @@ export const PROJECTS: Project[] = [
     poster: workezThumbnail.src,
     embedUrl:
       "https://player.vimeo.com/video/1247960038?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    // stills: [workezThumbnail.src, workezThumbnail.src],
   },
   {
     id: "papa-johns",
@@ -104,7 +66,6 @@ export const PROJECTS: Project[] = [
     videoOrientation: "landscape",
     embedUrl:
       "https://player.vimeo.com/video/1247729292?autopause=0&player_id=0&app_id=58479",
-    // stills: ["https://vumbnail.com/1247729292.jpg"],
   },
   {
     id: "slam-fitness",
@@ -113,7 +74,6 @@ export const PROJECTS: Project[] = [
     category: "commercial",
     portfolioCategory: "cinematography",
     poster: rifleThumbnail.src,
-    // descriptionHeading: "LOCK OadsfaN. LEVEL UP.",
     description:
       "An action-inspired launch teaser created to build anticipation for the opening of SLAM Fitness Studio in Madurai. Using suspense, sharp visuals and a striking reveal, the film turns the anticipation of a new fitness destination into a cinematic experience.",
     client: "SLAM Fitness Studio, Madurai",
@@ -122,7 +82,6 @@ export const PROJECTS: Project[] = [
     videoOrientation: "portrait",
     embedUrl:
       "https://player.vimeo.com/video/1247979901?title=0&byline=0&portrait=0&autopause=0&player_id=0&app_id=58479",
-    // stills: [rifleThumbnail.src, rifleThumbnail.src],
   },
   {
     id: "pothys-swarnamahal",
@@ -139,6 +98,5 @@ export const PROJECTS: Project[] = [
     poster: pothysThumbnail.src,
     embedUrl:
       "https://player.vimeo.com/video/1247735250?autopause=0&player_id=0&app_id=58479",
-    // stills: [pothysThumbnail.src, pothysThumbnail.src],
   },
 ];

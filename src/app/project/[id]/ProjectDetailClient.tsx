@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { notFound, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "motion/react";

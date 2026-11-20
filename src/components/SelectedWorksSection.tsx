@@ -233,7 +233,6 @@ export const SelectedWorksSection: React.FC = () => {
               <SelectedWorkCard
                 title="new arrival new era "
                 subtitle="Sierra EV • Launch Film"
-                // aspectRatio="4 / 5"
                 className="w-full h-full flex-1 aspect-[4/5] md:aspect-auto"
                 href="/project/sierra-ev"
               >

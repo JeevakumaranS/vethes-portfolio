@@ -1,9 +1,3 @@
-export type ProjectCategory =
-  | 'all'
-  | 'narrative'
-  | 'commercial'
-  | 'music-video';
-
 export type PortfolioPageCategory = 'cinematography' | 'color';
 
 interface ProjectDetails {
@@ -28,27 +22,6 @@ interface ProjectDetails {
 }
 
 export type Project = ProjectDetails &
-  (
-    | { videoSrc: string; embedUrl?: never }
-    | { videoSrc?: never; embedUrl: string }
-  );
-
-export interface FeaturedReelItem {
-  tag: string;
-  title: string;
-  badge: string;
-  poster: string;
-  videoSrc: string;
-}
-
-interface ModalReelDetails {
-  title: string;
-  subtitle?: string;
-  duration?: string;
-  poster: string;
-}
-
-export type ModalReelItem = ModalReelDetails &
   (
     | { videoSrc: string; embedUrl?: never }
     | { videoSrc?: never; embedUrl: string }
