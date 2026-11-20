@@ -88,7 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
           variants={itemVariants}
           className="flex flex-row items-center justify-center gap-3 sm:gap-5 md:gap-7 whitespace-nowrap leading-none"
         >
-          <span className="translate-y-5 translate-x-5 font-sans font-light tracking-wide text-white text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+          <span className="translate-y-2 translate-x-3 sm:translate-y-5 sm:translate-x-5 font-sans font-light tracking-wide text-white text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Directed by
           </span>
           <VethesLogoSvg className="h-7 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto text-[#A100FF] shrink-0" />

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   navOpen: boolean;
@@ -12,6 +13,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const router = useRouter();
 
   return (
     <header className="fixed top-0 w-full z-50 pt-safe transition-all">
@@ -24,6 +26,10 @@ export const Header: React.FC<HeaderProps> = ({ navOpen, onToggleNav }) => {
         {/* Top Left: Signature Brand Mark (Pure White) */}
         <Link
           href="/"
+          onClick={(event) => {
+            event.preventDefault();
+            router.replace("/");
+          }}
           className="text-white hover:opacity-80 transition-opacity flex items-center"
           aria-label="Vethesnan Home"
         >

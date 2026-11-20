@@ -1,13 +1,22 @@
 "use client";
 
 import React, { useState } from "react";
-import { notFound } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Header } from "@/components/Header";
 import { NavigationOverlay } from "@/components/NavigationOverlay";
 import { ContactSection } from "@/components/ContactSection";
 import { PROJECTS } from "@/data/projects";
+
+const NEXT_PROJECT_ORDER = [
+  "slam-fitness",
+  "workez-walkthrough",
+  "sierra-ev",
+  "papa-johns",
+  "pothys-swarnamahal",
+  "sierra-testimonial",
+] as const;
 
 interface ProjectDetailClientProps {
   id: string;
@@ -16,6 +25,7 @@ interface ProjectDetailClientProps {
 export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
   const [navOpen, setNavOpen] = useState(false);
   const [detailsOpen, setDetailsOpen] = useState(false);
+  const searchParams = useSearchParams();
 
   const project = PROJECTS.find((p) => p.id === id);
 
@@ -23,9 +33,25 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
     notFound();
   }
 
-  // Find next project for continuation
-  const currentIndex = PROJECTS.findIndex((p) => p.id === id);
-  const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
+  const orderedProjects = NEXT_PROJECT_ORDER.flatMap((projectId) => {
+    const orderedProject = PROJECTS.find((candidate) => candidate.id === projectId);
+    return orderedProject ? [orderedProject] : [];
+  });
+  const startingProject =
+    orderedProjects.find(
+      (candidate) => candidate.id === searchParams.get("nextStart"),
+    ) ?? project;
+  const nextProjectOrder = [
+    ...orderedProjects.filter(
+      (candidate) => candidate.id !== startingProject.id,
+    ),
+    startingProject,
+  ];
+  const currentIndex = nextProjectOrder.findIndex(
+    (candidate) => candidate.id === project.id,
+  );
+  const nextProject =
+    nextProjectOrder[(currentIndex + 1) % nextProjectOrder.length];
   const hasVideoDescriptionLayout = Boolean(
     project.description &&
       project.embedUrl &&
@@ -382,7 +408,7 @@ export function ProjectDetailClient({ id }: ProjectDetailClientProps) {
         {nextProject && (
           <section className="mx-auto mt-24 max-w-5xl px-4 sm:mt-32 sm:px-6 lg:px-8">
             <Link
-              href={`/project/${nextProject.id}`}
+              href={`/project/${nextProject.id}?nextStart=${encodeURIComponent(startingProject.id)}`}
               className="group relative flex min-h-64 items-end overflow-hidden border border-white/15 bg-charcoal-900 p-6 sm:min-h-80 sm:p-10"
             >
               <div
