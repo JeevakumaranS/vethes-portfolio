@@ -151,7 +151,7 @@ const SelectedWorkCard: React.FC<SelectedWorkCardProps> = ({
         </span>
       </span>
       <span className="mt-1 block overflow-hidden">
-        <span className="block font-sans text-sm leading-5 text-[#A100FF] transition-transform delay-75 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 group-focus-within:translate-y-0 motion-reduce:transition-none [@media(hover:hover)]:translate-y-full">
+        <span className="block font-sans text-sm leading-5 text-[#a3a3a3] transition-transform delay-75 duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 group-focus-within:translate-y-0 motion-reduce:transition-none [@media(hover:hover)]:translate-y-full">
           {subtitle}
         </span>
       </span>
