@@ -72,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
   };
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between items-center text-center px-6 sm:px-10 lg:px-16 xl:px-20 pt-36 sm:pt-40 md:pt-44 pb-16 sm:pb-20 bg-black select-none overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col justify-between items-center text-center px-6 sm:px-10 lg:px-16 xl:px-20 pt-36 sm:pt-40 md:pt-44 2xl:pt-[clamp(11rem,12vh,16rem)] pb-16 sm:pb-20 2xl:pb-[clamp(5rem,6vh,8rem)] bg-black select-none overflow-hidden">
       {/* Spacer to balance vertical alignment */}
       <div className="hidden sm:block h-6" />
 
@@ -81,23 +81,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="my-auto max-w-5xl mx-auto flex flex-col items-center justify-center"
+        className="my-auto max-w-[90vw] mx-auto flex flex-col items-center justify-center"
       >
         {/* Main Title */}
         <motion.h1
           variants={itemVariants}
-          className="flex flex-row items-center justify-center gap-3 sm:gap-5 md:gap-7 whitespace-nowrap leading-none"
+          className="flex flex-row items-center justify-center gap-3 sm:gap-5 md:gap-[clamp(1.75rem,2vw,3rem)] whitespace-nowrap leading-none"
         >
-          <span className="translate-y-2 translate-x-3 sm:translate-y-5 sm:translate-x-5 font-sans font-light tracking-wide text-white text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+          <span className="translate-y-2 translate-x-3 sm:translate-y-5 sm:translate-x-5 md:translate-y-[clamp(1.25rem,1.6vw,2.5rem)] font-sans font-light tracking-wide text-white text-base sm:text-2xl md:[font-size:clamp(1.875rem,4vw,6rem)]">
             Directed by
           </span>
-          <VethesLogoSvg className="h-7 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto text-[#A100FF] shrink-0" />
+          <VethesLogoSvg className="h-7 sm:h-12 md:[height:clamp(3.5rem,6.5vw,10rem)] w-auto text-[#A100FF] shrink-0" />
         </motion.h1>
 
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className="mt-6 sm:mt-8 md:mt-10 text-xs sm:text-sm md:text-base font-light text-silver-300 tracking-[0.03em] max-w-xl mx-auto leading-relaxed px-4"
+          className="mt-6 sm:mt-8 md:mt-10 2xl:mt-[clamp(2.5rem,3vw,4rem)] text-xs sm:text-sm md:[font-size:clamp(1rem,1.15vw,1.5rem)] font-light text-silver-300 tracking-[0.03em] max-w-xl 2xl:max-w-3xl mx-auto leading-relaxed px-4"
         >
           Crafting emotionally resonant stories with atmospheric storytelling.
         </motion.p>
@@ -115,10 +115,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick }) => {
           aria-label="Scroll to selected works"
           className="group flex flex-col items-center gap-2 text-[#A100FF] hover:opacity-80 transition-opacity cursor-pointer"
         >
-          <span className="text-[9px] tracking-[0.28em] uppercase font-medium text-[#A100FF]">
+          <span className="text-[9px] md:[font-size:clamp(0.75rem,0.8vw,1rem)] tracking-[0.28em] uppercase font-medium text-[#A100FF]">
             SCROLL
           </span>
-          <ArrowDown className="w-4 h-4 animate-bounce text-[#A100FF]" />
+          <ArrowDown className="w-4 h-4 md:[width:clamp(1.25rem,1.5vw,2rem)] md:[height:clamp(1.25rem,1.5vw,2rem)] animate-bounce text-[#A100FF]" />
         </button>
       </motion.div>
     </section>
