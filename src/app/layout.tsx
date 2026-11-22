@@ -18,7 +18,10 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "VETHESNAN",
+  title: "Vethesnan",
+  icons: {
+    icon: "/Ellipsde.svg?v=20261122",
+  },
   description:
     "Crafting emotionally resonant stories with atmospheric storytelling. Cinematic portfolio of Vethesnan, Director & DP specializing in narrative cinema, commercial brand films, and select cinematography.",
   keywords: [
